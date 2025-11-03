@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water or Gun Game</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="bg-slate-100">
+
+    <header>
+        <nav class="bg-linear-to-r/increasing from-indigo-500 to-teal-400">
+            <ul class="flex justify-center items-center uppercase gap-9 font-semibold h-16 text-5xl text-white">
+                <li>Snake</li>
+                <li>Water</li>
+                <li>Gun</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            <div class="flex flex-col justify-center items-center mt-12 space-y-6">
+                <p class="text-5xl text-[#ff8c00]">Enter Snake Water or Gun to play with Computer.</p>
+                <p class="text-4xl text-[#33CCFF]">Computer will choose itself Snake Water or Gun.</p>
+            </div>
+            <div class="flex flex-col justify-center items-center m-16">
+                <input class="border border-gray-400 text-2xl px-2 py-2.5 w-[22vw] text-gray-600 rounded-lg" type="text"
+                    placeholder="Enter here" id="SWG-input">
+                <button
+                    class="mt-12 border border-green-600 text-green-600 hover:bg-green-600 hover:text-white text-lg uppercase px-2 py-2.5 w-[6vw] rounded-lg transition duration-300 ease-in-out"
+                    id="check-btn">Check</button>
+            </div>
+            <div class="flex flex-col justify-center items-center space-y-6">
+                <h2 class="text-3xl uppercase text-[#ff8000]">User Choice: <span id="ur" class="text-gray-900"></span></h2>
+                <h2 class="text-3xl uppercase text-[#ff8000]">Computer Choice: <span id="cm" class="text-gray-900"></span></h2>
+                <h2 id="won" class="text-6xl text-[#ff8000]"></h2>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

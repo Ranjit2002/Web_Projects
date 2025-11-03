@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="bg-linear-to-r from-indigo-400 to-indigo-600">
+
+    <div class="flex flex-col justify-center items-center space-y-3">
+        <h1 class="text-4xl font-bold text-white mt-7">Simple Todo List</h1>
+
+        <p class="text-lg text-white">Welcome to the Todo list. Double click to edit the Todo</p>
+
+        <input class="mt-7 bg-white px-2.5 py-2.5 w-[20vw] rounded-lg" type="text" id="todo-input" placeholder="Enter a todo and press Add or Enter">
+
+        <button id="add-btn" class="bg-indigo-700 text-white w-fit rounded-lg px-6 py-2.5 mt-3 mb-5 hover:bg-indigo-600 active:bg-indigo-500">Add</button>
+        <ul id="todo-list" class="space-y-2"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
