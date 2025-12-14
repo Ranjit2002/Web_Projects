@@ -1,49 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en" class="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
     <title>Quick Notes</title>
-</head>
-<body>
 
-    <header>
-        <h1>Quick Notes</h1>
-        <div>
-            <button class="add-note-btn" onclick="openNoteDialog()">+ Add Note</button>
-            <button id="themeToggleBtn" class="theme-toggle-btn">🌙</button>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100">
+
+    <!-- HEADER -->
+    <header class="border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 shadow">
+        <div class="max-w-4xl mx-auto flex justify-between items-center p-4">
+
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-600 dark:text-blue-400" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414
+                             a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+                <h1 class="text-2xl font-semibold">Quick Notes</h1>
+            </div>
+
+            <div class="flex gap-3">
+                <button class="add-note-btn flex items-center gap-2 bg-blue-600 hover:bg-blue-700
+                    text-white px-4 py-2 rounded-lg shadow transition">
+                    <span class="text-xl">+</span>
+                    <span>Add Note</span>
+                </button>
+
+                <button id="themeToggleBtn"
+                    class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
+                    🌙
+                </button>
+            </div>
+
         </div>
     </header>
 
-    <main id="notesContainer" class="notes-grid">
-
+    <!-- NOTES CONTAINER -->
+    <main id="notesContainer" class="max-w-4xl mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
     </main>
 
-    <dialog id="noteDialog">
-        <div class="dialog-content">
-            <div class="dialog-header">
-                <h2 class="dialog-title" id="dialogTitle">Add New Note</h2>
-                <button class="close-btn" onclick="closeNoteDialog()">x</button>
+
+    <!-- NOTE DIALOG -->
+    <dialog id="noteDialog" class="backdrop:bg-black/50 backdrop:backdrop-blur-sm">
+
+        <div class="dialog-content bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl
+            w-[90vw] max-w-md flex flex-col gap-4 mx-auto">
+
+            <div class="flex justify-between items-center">
+                <h2 id="dialogTitle" class="text-xl font-semibold">Add New Note</h2>
+
+                <button class="close-btn p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg">
+                    ✖
+                </button>
             </div>
 
-            <form id="noteForm">
-                <div class="form-group">
-                    <label for="noteTitle" class="form-lable">Title</label>
-                    <input type="text" id="noteTitle" class="form-input" placeholder="Enter note title..." required>
+            <form id="noteForm" class="flex flex-col gap-4">
+
+                <div class="flex flex-col">
+                    <label for="noteTitle" class="mb-1 font-medium">Title</label>
+                    <input id="noteTitle" type="text" class="p-2 border rounded-lg bg-gray-100 dark:bg-gray-700
+                        border-gray-300 dark:border-gray-600" placeholder="Enter note title..." required>
                 </div>
 
-                <div class="form-group">
-                    <label for="noteContent" class="form-label">Content</label>
-                    <textarea id="noteContent" class="form-textarea" placeholder="Write your note here..." required></textarea>
+                <div class="flex flex-col">
+                    <label for="noteContent" class="mb-1 font-medium">Content</label>
+                    <textarea id="noteContent" rows="5" class="p-2 border rounded-lg bg-gray-100 dark:bg-gray-700
+                        border-gray-300 dark:border-gray-600" placeholder="Write your note here..."
+                        required></textarea>
                 </div>
 
-                <div class="dialog-actions">
-                    <button type="button" class="cancel-btn" onclick="closeNoteDialog()">Cancel</button>
-                    <button type="submit" class="save-btn">Save Note</button>
+                <div class="flex justify-end gap-2">
+                    <button type="button" class="cancel-btn px-4 py-2 rounded-lg border border-gray-400
+                            hover:bg-gray-100 dark:hover:bg-gray-700">
+                        Cancel
+                    </button>
+
+                    <button type="submit"
+                        class="save-btn px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Save Note
+                    </button>
                 </div>
+
             </form>
+
         </div>
     </dialog>
-    
+
+    <script src="script.js"></script>
 </body>
+
 </html>
