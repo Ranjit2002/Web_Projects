@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandMitra | Secure Checkout</title>
+    <link rel="icon" type="png" href="img/favicon.png">
+    <link href="./src/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body
+    class="bg-gray-900 text-white font-sans min-h-screen flex flex-col pt-20 selection:bg-pink-500 selection:text-white">
+
+    <nav
+        class="fixed w-full z-50 top-0 bg-gray-900/80 backdrop-blur-md border-b border-gray-800 transition-all shadow-lg">
+        <div class="max-w-7xl mx-auto px-5 py-5 flex items-center justify-between">
+            <a href="index.html"
+                class="text-3xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent tracking-wide hover:scale-105 transition-transform z-50">
+                BandMitra
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-gray-300 font-medium items-center">
+                <a href="index.html" class="hover:text-pink-400 transition-colors duration-300">Home</a>
+                <a href="About.html" class="hover:text-pink-400 transition-colors duration-300">About</a>
+                <a href="Bands.html" class="hover:text-pink-400 transition-colors duration-300">Bands</a>
+                <a href="Register.html" class="hover:text-pink-400 transition-colors duration-300">Register</a>
+                <a href="Contact.html" class="hover:text-pink-400 transition-colors duration-300">Contact</a>
+            </div>
+
+            <button id="mobile-menu-btn"
+                class="md:hidden text-gray-300 hover:text-white focus:outline-none z-50 active:scale-90 transition-transform">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-gray-900 border-b border-gray-800 shadow-xl absolute w-full left-0 top-full">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-gray-300 font-medium text-center">
+                <a href="index.html" class="hover:text-pink-400 transition-colors block">Home</a>
+                <a href="About.html" class="hover:text-pink-400 transition-colors block">About</a>
+                <a href="Bands.html" class="hover:text-pink-400 transition-colors block">Bands</a>
+                <a href="Register.html" class="hover:text-pink-400 transition-colors block">Register</a>
+                <a href="Contact.html" class="hover:text-pink-400 transition-colors block">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12 w-full">
+
+        <div
+            class="w-full lg:w-2/3 bg-gray-800 p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden border border-gray-700">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-500 to-orange-500"></div>
+
+            <h2 class="text-4xl font-bold mb-2">Finalize Your Event</h2>
+            <p class="text-gray-400 mb-8">Please provide your event details to secure the booking.</p>
+
+            <form id="bookingForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                        <input type="text" required
+                            class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                            placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                        <input type="tel" required
+                            class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
+                            placeholder="+91 98765 XXXXX">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Event Date</label>
+                        <input type="date" required
+                            class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-gray-300">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Event Time</label>
+                        <input type="time" required
+                            class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all text-gray-300">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Event Address / Venue</label>
+                    <textarea rows="3" required
+                        class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none"
+                        placeholder="Enter the full address of the venue..."></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full py-4 mt-4 rounded-xl bg-gradient-to-r from-pink-500 to-orange-500 text-white font-bold text-lg hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 active:scale-95 transition-all duration-300">
+                    Proceed to Payment
+                </button>
+            </form>
+        </div>
+
+        <div class="w-full lg:w-1/3">
+            <div class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 shadow-xl sticky top-28">
+                <h3 class="text-2xl font-bold mb-6 border-b border-gray-700 pb-4">Booking Summary</h3>
+
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <p class="text-sm text-gray-400">Selected Band</p>
+                        <p id="summaryBandName" class="text-xl font-bold text-pink-400 drop-shadow-md">Loading...</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 pt-4 space-y-3">
+                    <div class="flex justify-between text-gray-300">
+                        <span>Base Price</span>
+                        <span id="summaryPrice" class="font-medium">₹0</span>
+                    </div>
+                    <div class="flex justify-between text-gray-300">
+                        <span>Platform Fee</span>
+                        <span class="font-medium text-green-400">Free</span>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 mt-4 pt-4 flex justify-between items-center">
+                    <span class="text-lg font-bold">Total Amount</span>
+                    <span id="summaryTotal"
+                        class="text-2xl font-extrabold bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">₹0</span>
+                </div>
+
+                <div class="mt-8 flex items-center justify-center gap-2 text-sm text-gray-500">
+                    <i class="fas fa-lock text-green-500"></i> Secure Checkout
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="paymentModal"
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-gray-800 border border-gray-700 rounded-3xl p-8 max-w-md w-full shadow-2xl relative text-center">
+
+            <h3 class="text-2xl font-bold mb-2 text-white">Scan to Pay</h3>
+            <p class="text-gray-400 mb-6">Pay securely via any UPI App</p>
+
+            <div class="bg-white p-4 rounded-xl inline-block mb-6 shadow-inner">
+                <img id="upiQRCode" src="" alt="UPI QR Code" class="w-48 h-48 mx-auto">
+            </div>
+
+            <div class="mb-6">
+                <p class="text-gray-400 text-sm">Amount to Pay:</p>
+                <p id="modalAmount"
+                    class="text-3xl font-extrabold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+                    ₹0</p>
+                <p class="text-gray-500 text-sm mt-2">UPI ID: vishwakarmaranjit8109@okaxis</p>
+            </div>
+
+            <div class="flex gap-4">
+                <button id="cancelPaymentBtn"
+                    class="flex-1 py-3 rounded-xl bg-gray-700 text-white font-bold hover:bg-gray-600 transition-colors">
+                    Cancel
+                </button>
+                <button id="confirmPaymentBtn"
+                    class="flex-1 py-3 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1 transition-all duration-300">
+                    I Have Paid
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

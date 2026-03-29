@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandMitra | About Us</title>
+    <link rel="icon" type="png" href="img/favicon.png">
+    <link href="./src/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white font-sans pt-24 pb-12 selection:bg-pink-500 selection:text-white">
+
+    <nav
+        class="fixed w-full z-50 top-0 bg-gray-900/80 backdrop-blur-md border-b border-gray-800 transition-all shadow-lg">
+        <div class="max-w-7xl mx-auto px-5 py-5 flex items-center justify-between">
+            <a href="index.html"
+                class="text-3xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent tracking-wide hover:scale-105 transition-transform z-50">
+                BandMitra
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-gray-300 font-medium items-center">
+                <a href="index.html" class="hover:text-pink-400 transition-colors duration-300">Home</a>
+                <a href="About.html" class="text-white font-bold border-b-2 border-pink-500 pb-1">About</a>
+                <a href="Bands.html" class="hover:text-pink-400 transition-colors duration-300">Bands</a>
+                <a href="Register.html" class="hover:text-pink-400 transition-colors duration-300">Register</a>
+                <a href="Contact.html" class="hover:text-pink-400 transition-colors duration-300">Contact</a>
+            </div>
+
+            <button id="mobile-menu-btn"
+                class="md:hidden text-gray-300 hover:text-white focus:outline-none z-50 active:scale-90 transition-transform">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-gray-900 border-b border-gray-800 shadow-xl absolute w-full left-0 top-full">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-gray-300 font-medium text-center">
+                <a href="index.html" class="hover:text-pink-400 transition-colors block">Home</a>
+                <a href="About.html"
+                    class="text-white font-bold border-b-2 border-pink-500 pb-1 inline-block mx-auto">About</a>
+                <a href="Bands.html" class="hover:text-pink-400 transition-colors block">Bands</a>
+                <a href="Register.html" class="hover:text-pink-400 transition-colors block">Register</a>
+                <a href="Contact.html" class="hover:text-pink-400 transition-colors block">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-6 mt-10">
+        <div class="text-center mb-16">
+            <h1
+                class="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent inline-block mb-4">
+                Our Mission</h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">Connecting incredible musical talent with people who want
+                to throw unforgettable events. Music is life, and we make bringing it to your stage effortless.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div
+                class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-pink-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 group">
+                <div
+                    class="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">For Event Planners</h3>
+                <p class="text-gray-400">Browse a curated list of local bands, listen to samples, and book directly with
+                    transparent pricing and secure communications.</p>
+            </div>
+
+            <div
+                class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-indigo-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 group">
+                <div
+                    class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">For Musicians</h3>
+                <p class="text-gray-400">Create a profile, set your rates, and let the gigs come to you. We handle the
+                    visibility so you can focus on the music.</p>
+            </div>
+
+            <div
+                class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 group">
+                <div
+                    class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Secure & Easy</h3>
+                <p class="text-gray-400">Our platform ensures that communications are clear, bookings are locked in, and
+                    everyone is ready to rock when the day comes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

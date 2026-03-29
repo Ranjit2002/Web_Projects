@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandMitra | Admin Dashboard</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white font-sans h-screen flex overflow-hidden selection:bg-pink-500 selection:text-white"
+    id="adminDashboardPage">
+
+    <aside class="w-64 bg-gray-800 border-r border-gray-700 hidden md:flex flex-col flex-shrink-0 h-full">
+        <div class="p-6 border-b border-gray-700">
+            <a href="index.html"
+                class="text-2xl font-extrabold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
+                BandMitra Admin
+            </a>
+        </div>
+        <nav class="flex-grow p-4 space-y-2 overflow-y-auto">
+            <a href="#bookingsSection"
+                class="block px-4 py-3 rounded-xl bg-gray-900 text-pink-400 font-bold border border-gray-700 hover:border-pink-500 transition-colors">
+                <i class="fas fa-calendar-check w-6"></i> Bookings
+            </a>
+            <a href="#messagesSection"
+                class="block px-4 py-3 rounded-xl text-gray-400 hover:bg-gray-700 hover:text-white transition-colors">
+                <i class="fas fa-envelope w-6"></i> Messages
+            </a>
+            <a href="#bandsSection"
+                class="block px-4 py-3 rounded-xl text-gray-400 hover:bg-gray-700 hover:text-white transition-colors">
+                <i class="fas fa-guitar w-6"></i> Registered Bands
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-700">
+            <a href="index.html" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-sign-out-alt w-6"></i> Back to Site
+            </a>
+        </div>
+    </aside>
+
+    <main class="flex-grow p-8 overflow-y-auto scroll-smooth bg-gray-900">
+        <header class="mb-10 flex justify-between items-center">
+            <div>
+                <h1 class="text-4xl font-bold mb-1">Welcome back, Ranjit!</h1>
+                <p class="text-gray-400">Here is what is happening with BandMitra today.</p>
+            </div>
+        </header>
+
+        <section id="bookingsSection" class="mb-12 pt-4">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><i
+                    class="fas fa-calendar-check text-pink-500"></i> Recent Bookings</h2>
+            <div class="bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden shadow-xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse whitespace-nowrap">
+                        <thead>
+                            <tr
+                                class="bg-gray-900 text-gray-400 text-sm uppercase tracking-wider border-b border-gray-700">
+                                <th class="p-4">Customer</th>
+                                <th class="p-4">Band</th>
+                                <th class="p-4">Date & Time</th>
+                                <th class="p-4">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminBookingsTable" class="divide-y divide-gray-700">
+                            <tr>
+                                <td colspan="4" class="p-6 text-center text-gray-500">Loading bookings...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="messagesSection" class="mb-12 pt-4">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-envelope text-orange-500"></i>
+                Customer Messages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="adminMessagesGrid">
+                <p class="text-gray-500 col-span-full p-4">Loading messages...</p>
+            </div>
+        </section>
+
+        <section id="bandsSection" class="mb-12 pt-4">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-guitar text-purple-500"></i>
+                Registered Bands</h2>
+            <div class="bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden shadow-xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse whitespace-nowrap">
+                        <thead>
+                            <tr
+                                class="bg-gray-900 text-gray-400 text-sm uppercase tracking-wider border-b border-gray-700">
+                                <th class="p-4">Band Name</th>
+                                <th class="p-4">Location</th>
+                                <th class="p-4">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminBandsTable" class="divide-y divide-gray-700">
+                            <tr>
+                                <td colspan="3" class="p-6 text-center text-gray-500">Loading bands...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

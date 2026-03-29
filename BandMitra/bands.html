@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandMitra | Bands & Festivals</title>
+    <link rel="icon" type="png" href="img/favicon.png">
+    <link href="./src/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white font-sans pt-24 pb-12 min-h-screen selection:bg-pink-500 selection:text-white">
+
+    <nav
+        class="fixed w-full z-50 top-0 bg-gray-900/80 backdrop-blur-md border-b border-gray-800 transition-all shadow-lg">
+        <div class="max-w-7xl mx-auto px-5 py-5 flex items-center justify-between">
+            <a href="index.html"
+                class="text-3xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent tracking-wide hover:scale-105 transition-transform z-50">
+                BandMitra
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-gray-300 font-medium items-center">
+                <a href="index.html" class="hover:text-pink-400 transition-colors duration-300">Home</a>
+                <a href="About.html" class="hover:text-pink-400 transition-colors duration-300">About</a>
+                <a href="Bands.html" class="text-white font-bold border-b-2 border-pink-500 pb-1">Bands</a>
+                <a href="Register.html" class="hover:text-pink-400 transition-colors duration-300">Register</a>
+                <a href="Contact.html" class="hover:text-pink-400 transition-colors duration-300">Contact</a>
+            </div>
+
+            <button id="mobile-menu-btn"
+                class="md:hidden text-gray-300 hover:text-white focus:outline-none z-50 active:scale-90 transition-transform">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-gray-900 border-b border-gray-800 shadow-xl absolute w-full left-0 top-full">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-gray-300 font-medium text-center">
+                <a href="index.html" class="hover:text-pink-400 transition-colors block">Home</a>
+                <a href="About.html" class="hover:text-pink-400 transition-colors block">About</a>
+                <a href="Bands.html"
+                    class="text-white font-bold border-b-2 border-pink-500 pb-1 inline-block mx-auto">Bands</a>
+                <a href="Register.html" class="hover:text-pink-400 transition-colors block">Register</a>
+                <a href="Contact.html" class="hover:text-pink-400 transition-colors block">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 mt-8">
+        <div class="text-center mb-10">
+            <h1
+                class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent inline-block mb-4">
+                Book Bands for Festivals
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
+                Find the perfect live music and bands for your traditional rituals, cultural festivals, and grand
+                celebrations.
+            </p>
+
+            <div class="max-w-xl mx-auto relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
+                <input type="text" id="searchInput"
+                    class="w-full pl-12 pr-4 py-4 bg-gray-800 border border-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all text-white placeholder-gray-400 shadow-lg text-lg"
+                    placeholder="Search by festival name or location...">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="bandsGrid">
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/diwali/600/400" alt="Diwali"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Diwali Celebration</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Mumbai, Maharashtra</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹15,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/holi/600/400" alt="Holi"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Holi Festival</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Vrindavan, UP</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹12,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/garba/600/400" alt="Navratri"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Navratri Garba</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Ahmedabad, Gujarat</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹20,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/ganesh/600/400" alt="Ganesh Chaturthi"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Ganesh Chaturthi</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Pune, Maharashtra</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹18,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/durga/600/400" alt="Durga Puja"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Durga Puja</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Kolkata, West Bengal</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹25,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/baisakhi/600/400" alt="Baisakhi"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Baisakhi Mela</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Amritsar, Punjab</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹14,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/pongal/600/400" alt="Pongal"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Pongal Feast</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Chennai, Tamil Nadu</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹11,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/onam/600/400" alt="Onam"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Onam Celebration</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Kochi, Kerala</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹16,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group">
+                <div class="overflow-hidden h-52 relative">
+                    <img src="https://picsum.photos/seed/kite/600/400" alt="Makar Sankranti"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow relative -mt-12 z-10">
+                    <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md festival-name">Makar Sankranti</h3>
+                    <p class="text-gray-300 mb-1 flex items-center gap-2 location-text"><i
+                            class="fas fa-map-marker-alt text-pink-500"></i> Jaipur, Rajasthan</p>
+                    <p
+                        class="text-xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6 band-price">
+                        ₹10,000</p>
+                    <div class="mt-auto flex justify-end">
+                        <button
+                            class="book-btn bg-gradient-to-r from-pink-500 to-orange-500 text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-orange-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="noResults" class="hidden text-center py-12">
+            <i class="fas fa-search-minus text-5xl text-gray-600 mb-4"></i>
+            <h3 class="text-2xl font-bold text-gray-400">No bands found</h3>
+            <p class="text-gray-500">Try adjusting your search criteria.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
