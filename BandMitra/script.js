@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const bandCard = document.createElement('div');
                 bandCard.className = 'band-card bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 hover:border-pink-500 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 flex flex-col group';
 
-                const defaultImage = `https://images.unsplash.com/photo-1516457360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop`;
+                const defaultImage = `https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop`;
 
                 bandCard.innerHTML = `
                     <div class="overflow-hidden h-52 relative">

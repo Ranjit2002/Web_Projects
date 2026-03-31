@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Ranjeet Vishwakarma</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body
+    class="bg-black text-zinc-300 font-sans antialiased overflow-x-hidden selection:bg-yellow-400 selection:text-black">
+
+    <div
+        class="fixed inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none z-0">
+    </div>
+
+    <div
+        class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-yellow-400/10 blur-[120px] rounded-[100%] pointer-events-none z-0">
+    </div>
+
+    <nav class="fixed w-full z-50 top-0 bg-black/80 backdrop-blur-xl border-b border-zinc-900/80 transition-all">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html"
+                    class="text-white text-2xl font-black tracking-tighter hover:text-yellow-400 transition-colors duration-300 uppercase relative z-10">
+                    Ranjeet<span class="text-yellow-400">.</span>
+                </a>
+
+                <div class="hidden md:flex space-x-10 items-center font-medium relative z-10">
+                    <a href="index.html"
+                        class="text-yellow-400 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400 after:shadow-[0_0_8px_rgba(250,204,21,0.8)]">Home</a>
+                    <a href="about.html" class="text-zinc-400 hover:text-white transition-colors duration-300">About</a>
+                    <a href="contact.html"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300">Contact</a>
+                </div>
+
+                <div class="md:hidden flex items-center relative z-10">
+                    <button id="mobile-menu-btn"
+                        class="text-zinc-400 hover:text-yellow-400 focus:outline-none cursor-pointer transition-colors">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-zinc-950 border-b border-zinc-900 absolute w-full rounded-b-3xl shadow-2xl">
+            <div class="px-6 pt-4 pb-8 space-y-4 text-center">
+                <a href="index.html"
+                    class="block px-3 py-3 text-black bg-yellow-400 font-bold text-lg rounded-2xl shadow-[0_4px_15px_rgba(250,204,21,0.3)]">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-3 text-zinc-400 hover:text-white hover:bg-zinc-900 font-bold text-lg rounded-2xl transition-colors">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-3 text-zinc-400 hover:text-white hover:bg-zinc-900 font-bold text-lg rounded-2xl transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen flex items-center pt-20 relative overflow-hidden z-10">
+
+        <div
+            class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-zinc-900/40 to-transparent pointer-events-none transform -skew-x-12 translate-x-20 z-0">
+        </div>
+
+        <div
+            class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10 relative">
+
+            <div class="order-2 lg:order-1 text-center lg:text-left reveal">
+
+                <div
+                    class="mt-20 inline-flex items-center gap-2 px-5 py-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-mono text-sm mb-8 rounded-full shadow-[0_0_15px_rgba(250,204,21,0.1)]">
+                    <span
+                        class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse shadow-[0_0_8px_rgba(250,204,21,0.8)]"></span>
+                    FULL_STACK_DEVELOPER
+                </div>
+
+                <h1
+                    class="text-6xl md:text-7xl lg:text-8xl font-black text-white mt-6 mb-10 leading-none uppercase tracking-tighter">
+                    <span class="block text-zinc-200 hover:text-white transition-colors duration-300">Code.</span>
+                    <span
+                        class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.3)]">Create.</span>
+                    <span class="block text-zinc-200 hover:text-white transition-colors duration-300">Deploy.</span>
+                </h1>
+
+                <div class="relative pl-0 lg:pl-6 py-2 mb-10 text-center lg:text-left">
+                    <div
+                        class="hidden lg:block absolute left-0 top-0 w-1 h-full bg-yellow-400 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.5)]">
+                    </div>
+
+                    <p class="text-lg md:text-xl text-zinc-400 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
+                        Hi, I'm <span class="text-white font-bold">Ranjeet Vishwakarma</span>. I engineer
+                        high-performance web applications, transforming complex challenges into elegant, pixel-perfect
+                        digital experiences.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-10">
+                    <a href="about.html"
+                        class="px-8 py-4 bg-yellow-400 text-black font-black rounded-full hover:bg-yellow-300 transition-all duration-300 uppercase tracking-widest shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1">
+                        View Projects
+                    </a>
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-zinc-950 text-yellow-400 font-black rounded-full border-2 border-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300 uppercase tracking-widest hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+                        Contact Me
+                    </a>
+                </div>
+
+                <div
+                    class="flex items-center justify-center lg:justify-start gap-6 border-t border-zinc-900 pt-6 mb-20">
+                    <a href="https://github.com/Ranjit2002/Web_Projects.git"
+                        class="text-zinc-500 hover:text-yellow-400 transition-colors transform hover:scale-110">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/ranjeet-vishwakarma-5008262a5"
+                        class="text-zinc-500 hover:text-yellow-400 transition-colors transform hover:scale-110">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 flex justify-center lg:justify-end reveal reveal-delay-1 mt-10 lg:mt-0">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group">
+
+                    <div
+                        class="absolute inset-0 bg-yellow-400/20 rounded-full blur-2xl group-hover:bg-yellow-400/30 transition-all duration-700">
+                    </div>
+                    <div
+                        class="absolute inset-[-16px] md:inset-[-24px] border-[2px] border-dashed border-yellow-400/40 rounded-full animate-[spin_20s_linear_infinite] group-hover:border-yellow-400/80 transition-colors duration-500">
+                    </div>
+                    <div
+                        class="absolute inset-[-8px] md:inset-[-12px] border border-zinc-700 rounded-full animate-[spin_15s_linear_infinite_reverse] group-hover:border-yellow-400 transition-colors duration-500">
+                    </div>
+
+                    <img src="img/Ranjit.jpg" alt="Ranjeet Vishwakarma"
+                        class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-black z-10 transition-transform duration-700 group-hover:scale-[1.03] shadow-[0_0_40px_rgba(0,0,0,0.8)]">
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
