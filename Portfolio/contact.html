@@ -123,14 +123,16 @@
                 </div>
 
                 <div class="reveal reveal-delay-1">
-                    <form
+                    <form action="https://formsubmit.co/vishwakarmaranjit8109@gmail.com" method="POST"
                         class="space-y-6 bg-zinc-950/60 backdrop-blur-xl border border-zinc-800 p-8 md:p-10 rounded-[2.5rem] h-full flex flex-col justify-center shadow-2xl relative">
+
+                        <input type="hidden" name="_captcha" value="false">
 
                         <div class="space-y-2 group">
                             <label
                                 class="text-xs font-mono text-zinc-500 group-focus-within:text-yellow-400 uppercase tracking-widest ml-1 transition-colors">Your
                                 Name</label>
-                            <input type="text"
+                            <input type="text" name="name"
                                 class="w-full bg-black/40 border border-zinc-800 rounded-2xl px-6 py-4 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400/20 transition-all text-white placeholder-zinc-700"
                                 placeholder="John Doe" required>
                         </div>
@@ -139,7 +141,7 @@
                             <label
                                 class="text-xs font-mono text-zinc-500 group-focus-within:text-yellow-400 uppercase tracking-widest ml-1 transition-colors">Your
                                 Email</label>
-                            <input type="email"
+                            <input type="email" name="email"
                                 class="w-full bg-black/40 border border-zinc-800 rounded-2xl px-6 py-4 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400/20 transition-all text-white placeholder-zinc-700"
                                 placeholder="john@example.com" required>
                         </div>
@@ -147,7 +149,7 @@
                         <div class="space-y-2 group">
                             <label
                                 class="text-xs font-mono text-zinc-500 group-focus-within:text-yellow-400 uppercase tracking-widest ml-1 transition-colors">Message</label>
-                            <textarea rows="4"
+                            <textarea rows="4" name="message"
                                 class="w-full bg-black/40 border border-zinc-800 rounded-2xl px-6 py-4 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400/20 transition-all text-white placeholder-zinc-700 resize-none"
                                 placeholder="Tell me about your project..." required></textarea>
                         </div>
