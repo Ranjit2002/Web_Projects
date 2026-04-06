@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub | Ranjeet Vishwakarma</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body
+    class="bg-black text-zinc-300 font-sans antialiased overflow-x-hidden selection:bg-yellow-400 selection:text-black">
+
+    <div
+        class="fixed inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none z-0">
+    </div>
+
+    <div
+        class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-yellow-400/10 blur-[150px] rounded-[100%] pointer-events-none z-0">
+    </div>
+
+    <nav class="fixed w-full z-50 top-0 bg-black/80 backdrop-blur-xl border-b border-zinc-900/80 transition-all">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html"
+                    class="text-white text-2xl font-black tracking-tighter hover:text-yellow-400 transition-colors duration-300 uppercase relative z-10">Ranjeet<span
+                        class="text-yellow-400">.</span></a>
+                <div class="hidden md:flex space-x-10 items-center font-medium relative z-10">
+                    <a href="index.html" class="text-zinc-400 hover:text-white transition-colors duration-300">Home</a>
+                    <a href="about.html"
+                        class="text-yellow-400 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400 after:shadow-[0_0_8px_rgba(250,204,21,0.8)]">About</a>
+                    <a href="contact.html"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center relative z-10">
+                    <button id="mobile-menu-btn"
+                        class="text-zinc-400 hover:text-yellow-400 focus:outline-none cursor-pointer transition-colors">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-zinc-950 border-b border-zinc-900 absolute w-full rounded-b-3xl shadow-2xl z-50">
+            <div class="px-6 pt-4 pb-8 space-y-4 text-center">
+                <a href="index.html"
+                    class="block px-3 py-3 text-zinc-400 hover:text-white hover:bg-zinc-900 font-bold text-lg rounded-2xl transition-colors">Home</a>
+                <a href="about.html"
+                    class="block px-3 py-3 text-zinc-400 hover:text-white hover:bg-zinc-900 font-bold text-lg rounded-2xl transition-colors">About</a>
+                <a href="contact.html"
+                    class="block px-3 py-3 text-zinc-400 hover:text-white hover:bg-zinc-900 font-bold text-lg rounded-2xl transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 min-h-screen flex items-center relative z-10">
+        <div class="max-w-6xl mx-auto px-6 w-full">
+
+            <div class="mb-20 text-center reveal">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-mono text-sm mb-6 rounded-full shadow-[0_0_15px_rgba(250,204,21,0.1)]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2">
+                        </path>
+                    </svg>
+                    VERSION_CONTROL_SYSTEM
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
+                    Git & <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]">GitHub</span>
+                </h1>
+                <p class="text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed">Mastering distributed version
+                    control, collaborative workflows, and ensuring codebase integrity through structured branching and
+                    merges.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 reveal reveal-delay-1">
+
+                <div
+                    class="bg-zinc-950/60 backdrop-blur-xl border border-zinc-800 rounded-[2.5rem] p-10 hover:border-yellow-400/50 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] hover:-translate-y-2 transition-all duration-500 shadow-xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span
+                        class="absolute -bottom-6 -right-2 text-7xl font-black text-zinc-900/40 select-none z-0 transition-transform group-hover:scale-110 duration-700 tracking-tighter uppercase font-mono">INIT</span>
+
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-black border border-zinc-800 rounded-2xl flex items-center justify-center mb-8 group-hover:border-yellow-400/50 transition-colors shadow-[0_0_20px_rgba(0,0,0,0.5)] p-3">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                                alt="Git" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-widest mb-4">Version Control</h3>
+                        <p class="text-zinc-400 leading-relaxed font-light">Maintaining clean project histories through
+                            atomic commits, logical branching, and safe staging environments.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-zinc-950/60 backdrop-blur-xl border border-zinc-800 rounded-[2.5rem] p-10 hover:border-yellow-400/50 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] hover:-translate-y-2 transition-all duration-500 shadow-xl relative overflow-hidden group md:mt-12">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span
+                        class="absolute -bottom-6 -right-2 text-7xl font-black text-zinc-900/40 select-none z-0 transition-transform group-hover:scale-110 duration-700 tracking-tighter uppercase font-mono">PUSH</span>
+
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-black border border-zinc-800 rounded-2xl flex items-center justify-center mb-8 group-hover:border-yellow-400/50 transition-colors shadow-[0_0_20px_rgba(0,0,0,0.5)] p-3">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                                alt="GitHub" class="w-full h-full object-contain invert opacity-90">
+                        </div>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-widest mb-4">Collaboration</h3>
+                        <p class="text-zinc-400 leading-relaxed font-light">Working seamlessly in team environments
+                            using Pull Requests, code reviews, and resolving complex merge conflicts.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-zinc-950/60 backdrop-blur-xl border border-zinc-800 rounded-[2.5rem] p-10 hover:border-yellow-400/50 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)] hover:-translate-y-2 transition-all duration-500 shadow-xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span
+                        class="absolute -bottom-6 -right-2 text-7xl font-black text-zinc-900/40 select-none z-0 transition-transform group-hover:scale-110 duration-700 tracking-tighter uppercase font-mono">MRGE</span>
+
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-black border border-zinc-800 text-yellow-400 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-yellow-400 group-hover:text-black transition-colors shadow-[0_0_20px_rgba(0,0,0,0.5)] p-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-widest mb-4">CI / CD</h3>
+                        <p class="text-zinc-400 leading-relaxed font-light">Integrating automated testing and continuous
+                            deployment pipelines to ensure code is production-ready upon merge.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center reveal reveal-delay-1">
+                <a href="about.html"
+                    class="inline-flex items-center text-zinc-500 hover:text-yellow-400 font-mono uppercase tracking-widest transition-colors gap-3 group">
+                    <div
+                        class="p-2 rounded-full border border-zinc-800 group-hover:border-yellow-400 transition-colors">
+                        <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                    Return to Profile
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

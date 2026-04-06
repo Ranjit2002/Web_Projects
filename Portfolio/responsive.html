@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design | Ranjeet Vishwakarma</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body
+    class="bg-black text-zinc-300 font-sans antialiased overflow-x-hidden selection:bg-yellow-400 selection:text-black">
+
+    <div
+        class="fixed inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none z-0">
+    </div>
+    <div
+        class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-yellow-400/10 blur-[150px] rounded-[100%] pointer-events-none z-0">
+    </div>
+
+    <nav class="fixed w-full z-50 top-0 bg-black/80 backdrop-blur-xl border-b border-zinc-900/80 transition-all">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html"
+                    class="text-white text-2xl font-black tracking-tighter hover:text-yellow-400 transition-colors duration-300 uppercase relative z-10">Ranjeet<span
+                        class="text-yellow-400">.</span></a>
+                <div class="hidden md:flex space-x-10 items-center font-medium relative z-10">
+                    <a href="index.html" class="text-zinc-400 hover:text-white transition-colors duration-300">Home</a>
+                    <a href="about.html"
+                        class="text-yellow-400 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400 after:shadow-[0_0_8px_rgba(250,204,21,0.8)]">About</a>
+                    <a href="contact.html"
+                        class="text-zinc-400 hover:text-white transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 min-h-screen flex items-center relative z-10">
+        <div class="max-w-6xl mx-auto px-6 w-full">
+
+            <div class="mb-20 text-center reveal">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 font-mono text-sm mb-6 rounded-full shadow-[0_0_15px_rgba(250,204,21,0.1)]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    UI_ENGINEERING
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
+                    Responsive <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600 drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]">Design</span>
+                </h1>
+                <p class="text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed">Ensuring pixel-perfect UI and fluid
+                    layouts across mobile, tablet, and desktop interfaces using Tailwind CSS and modern grid systems.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 reveal reveal-delay-1">
+
+                <div
+                    class="bg-zinc-950/60 backdrop-blur-xl border border-zinc-800 rounded-[2.5rem] p-10 hover:border-yellow-400/50 hover:-translate-y-2 transition-all duration-500 shadow-xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span
+                        class="absolute -bottom-6 -right-2 text-[10rem] font-black text-zinc-900/40 select-none z-0 transition-transform group-hover:scale-110 duration-700">01</span>
+
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-black border border-zinc-800 text-yellow-400 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-yellow-400 group-hover:text-black transition-colors shadow-[0_0_20px_rgba(250,204,21,0.1)]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-widest mb-4">Mobile-First</h3>
+                        <p class="text-zinc-400 leading-relaxed font-light">Building the core experience for smaller
+                            screens first, ensuring lightning-fast load times and touch-friendly navigation.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-zinc-950/60 backdrop-blur-xl border border-zinc-800 rounded-[2.5rem] p-10 hover:border-yellow-400/50 hover:-translate-y-2 transition-all duration-500 shadow-xl relative overflow-hidden group md:mt-12">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span
+                        class="absolute -bottom-6 -right-2 text-[10rem] font-black text-zinc-900/40 select-none z-0 transition-transform group-hover:scale-110 duration-700">02</span>
+
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-black border border-zinc-800 text-yellow-400 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-yellow-400 group-hover:text-black transition-colors shadow-[0_0_20px_rgba(250,204,21,0.1)]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-widest mb-4">Fluid Grids</h3>
+                        <p class="text-zinc-400 leading-relaxed font-light">Utilizing CSS Grid and Flexbox dynamically
+                            to allow content, images, and typography to shift effortlessly on any device.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-zinc-950/60 backdrop-blur-xl border border-zinc-800 rounded-[2.5rem] p-10 hover:border-yellow-400/50 hover:-translate-y-2 transition-all duration-500 shadow-xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-600 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span
+                        class="absolute -bottom-6 -right-2 text-[10rem] font-black text-zinc-900/40 select-none z-0 transition-transform group-hover:scale-110 duration-700">03</span>
+
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 bg-black border border-zinc-800 text-yellow-400 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-yellow-400 group-hover:text-black transition-colors shadow-[0_0_20px_rgba(250,204,21,0.1)]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-black text-white uppercase tracking-widest mb-4">Performance</h3>
+                        <p class="text-zinc-400 leading-relaxed font-light">Optimizing assets and utilizing modern CSS
+                            frameworks to guarantee a 60fps scrolling experience across all platforms.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center reveal reveal-delay-1">
+                <a href="about.html"
+                    class="inline-flex items-center text-zinc-500 hover:text-yellow-400 font-mono uppercase tracking-widest transition-colors gap-3 group">
+                    <div
+                        class="p-2 rounded-full border border-zinc-800 group-hover:border-yellow-400 transition-colors">
+                        <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                    Return to Profile
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
