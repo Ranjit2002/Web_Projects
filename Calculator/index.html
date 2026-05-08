@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="sticky top-0 z-50 w-full">
+        <nav class="bg-slate-800 shadow-md h-16 flex items-center justify-between px-8">
+
+            <div
+                class="bg-yellow-400 text-slate-900 px-5 py-2 ml-20 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-300 shadow-sm">
+                Calculator
+            </div>
+
+            <ul class="flex items-center gap-8 text-slate-300 font-medium mr-20">
+                <li>
+                    <a href="#" class="text-yellow-400 transition-colors duration-300">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="text-yellow-400 transition-colors duration-300">About</a>
+                </li>
+                <li>
+                    <a href="#" class="text-yellow-400 transition-colors duration-300">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main class="h-screen w-screen overflow-hidden bg-zinc-950 flex justify-center items-center p-4">
+
+        <section class="bg-black p-5 rounded-[2rem] shadow-2xl border border-zinc-800 w-80">
+
+            <div class="w-full h-20 flex flex-col justify-end items-end mb-4 px-2">
+                <span class="text-zinc-500 text-lg" id="result"></span>
+                <span class="text-3xl font-bold text-white tracking-tight" id="sum"></span>
+            </div>
+            <hr class="text-yellow-300 w-full p-2">
+
+            <div class="flex justify-between mb-3">
+                <button id="AC"
+                    class="w-14 h-14 rounded-full bg-zinc-800 text-yellow-400 font-bold text-xl hover:bg-zinc-700 active:scale-95 transition-all">AC</button>
+                <button id="DEL"
+                    class="w-14 h-14 rounded-full bg-zinc-800 text-yellow-400 font-bold text-xl hover:bg-zinc-700 active:scale-95 transition-all">DEL</button>
+                <button id="percent"
+                    class="w-14 h-14 rounded-full bg-zinc-800 text-yellow-400 font-bold text-xl hover:bg-zinc-700 active:scale-95 transition-all">%</button>
+                <button id="add"
+                    class="w-14 h-14 rounded-full bg-yellow-400 text-black font-bold text-2xl hover:bg-yellow-300 active:scale-95 transition-all">+</button>
+            </div>
+
+            <div class="flex justify-between mb-3">
+                <button id="seven"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">7</button>
+                <button id="eight"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">8</button>
+                <button id="nine"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">9</button>
+                <button id="subtract"
+                    class="w-14 h-14 rounded-full bg-yellow-400 text-black font-bold text-3xl hover:bg-yellow-300 active:scale-95 transition-all">-</button>
+            </div>
+
+            <div class="flex justify-between mb-3">
+                <button id="four"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">4</button>
+                <button id="five"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">5</button>
+                <button id="six"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">6</button>
+                <button id="multiply"
+                    class="w-14 h-14 rounded-full bg-yellow-400 text-black font-bold text-3xl hover:bg-yellow-300 active:scale-95 transition-all">×</button>
+            </div>
+
+            <div class="flex justify-between mb-3">
+                <button id="one"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">1</button>
+                <button id="two"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">2</button>
+                <button id="three"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">3</button>
+                <button id="divide"
+                    class="w-14 h-14 rounded-full bg-yellow-400 text-black font-bold text-3xl hover:bg-yellow-300 active:scale-95 transition-all">÷</button>
+            </div>
+
+            <div class="flex justify-between">
+                <button id="two_zero"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-xl hover:bg-zinc-800 active:scale-95 transition-all">00</button>
+                <button id="zero"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-semibold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">0</button>
+                <button id="dot"
+                    class="w-14 h-14 rounded-full bg-zinc-900 text-white font-bold text-2xl hover:bg-zinc-800 active:scale-95 transition-all">.</button>
+                <button id="equals_to"
+                    class="w-14 h-14 rounded-full bg-yellow-300 text-black font-bold text-3xl hover:bg-amber-400 shadow-[0_0_15px_rgba(250,204,21,0.4)] active:scale-95 transition-all">=</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="fixed bottom-0 mb-5 w-full z-50 bg-amber-300 h-14 flex justify-center items-center">
+        <p class="text-xl font-semibold text-slate-900">Since 2002 &copy; All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

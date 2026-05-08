@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
+    <link href="./src/output.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-[#242424]">
+
+    <header>
+        <nav class="flex items-center justify-center bg-linear-to-bl from-violet-500 to-fuchsia-500 h-14">
+            <ul class="flex gap-9 text-shadow-md ">
+                <li
+                    class="text-lime-400 font-semibold hover:bg-yellow-400 hover:text-black hover:rounded-2xl px-4 py-2 transition-all duration-300 overflow-hidden cursor-pointer">
+                    Home</li>
+                <li
+                    class="text-lime-400 font-semibold hover:bg-yellow-400 hover:text-black hover:rounded-2xl px-4 py-2 transition-all duration-300 overflow-hidden cursor-pointer">
+                    About</li>
+                <li
+                    class="text-lime-400 font-semibold hover:bg-yellow-400 hover:text-black hover:rounded-2xl px-4 py-2 transition-all duration-300 overflow-hidden cursor-pointer">
+                    Contact</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div
+            class="container mx-auto mt-30 flex justify-around items-center bg-linear-to-r from-[#716bde] to-[#7f51e9] h-[42vh] w-[55vw] rounded-4xl">
+
+            <div
+                class="hr flex flex-col justify-center items-center bg-[#8d7fe7] px-2 py-2 h-[26vh] w-[14vw] rounded-3xl">
+                <span class="text-8xl text-white" id="hours">10</span>
+                <span class="hour uppercase mt-5 font-semibold text-white">Hours</span>
+            </div>
+
+            <div
+                class="min flex flex-col justify-center items-center bg-[#8d7fe7] px-2 py-2 h-[26vh] w-[14vw] rounded-3xl">
+                <span class="text-8xl text-white" id="minutes">20</span>
+                <span class="minute uppercase mt-5 font-semibold text-white">Minutes</span>
+            </div>
+
+            <div
+                class="sec flex flex-col justify-center items-center bg-[#8d7fe7] px-2 py-2 h-[26vh] w-[14vw] rounded-3xl">
+                <span class="text-8xl text-white" id="seconds">40</span>
+                <span class="seconds uppercase mt-5 font-semibold text-white">Seconds</span>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer
+        class="fixed bottom-0 w-full flex justify-center items-center bg-linear-to-r from-fuchsia-500 to-indigo-500 h-14 z-50">
+        <p class="text-white text-2xl">Since 2002 &copy; || All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
