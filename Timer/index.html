@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-Up Pomodoro</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gray-950 font-sans">
+
+    <!-- Main App Container -->
+    <div class="bg-gray-900 p-10 rounded-3xl shadow-2xl w-[90vw] max-w-md border border-gray-800 text-center">
+
+        <!-- Mode Selectors -->
+        <div class="flex justify-center gap-6 mb-10 text-xl">
+            <button id="btn-work"
+                class="text-lime-400 font-semibold px-4 py-2 rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(250,204,21,0.6)]">
+                Work Mode
+            </button>
+            <button id="btn-break"
+                class="text-gray-500 font-semibold px-4 py-2 rounded-xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(250,204,21,0.6)]">
+                Short Break
+            </button>
+        </div>
+
+        <!-- Timer Display -->
+        <div id="timer-display"
+            class="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-bl from-violet-500 to-fuchsia-500 mb-10 tracking-wider">
+            25:00
+        </div>
+
+        <!-- Primary Controls -->
+        <div class="flex justify-center gap-6 mb-10">
+            <button id="btn-start"
+                class="text-white font-bold text-xl bg-violet-600 px-8 py-3 rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.8)]">
+                Start
+            </button>
+            <button id="btn-reset"
+                class="text-white font-bold text-xl bg-gray-700 px-8 py-3 rounded-2xl transition-all duration-300 hover:shadow-[0_0_15px_rgba(156,163,175,0.6)]">
+                Reset
+            </button>
+        </div>
+
+        <!-- Session Tracker -->
+        <div class="border-t border-gray-800 pt-6">
+            <p class="text-gray-400 text-lg">Focus Sessions Completed Today:</p>
+            <p id="session-count" class="text-lime-400 font-bold text-3xl mt-2">0</p>
+        </div>
+
+    </div>
+
+    <!-- Links to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
