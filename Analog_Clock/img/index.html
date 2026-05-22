@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Using Pure JS</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="flex justify-center items-center min-h-screen bg-gray-100">
+        <!-- Added 'relative' and fixed 'border' -->
+        <div id="clockContainer"
+            class="relative h-[40vw] w-[40vw] bg-[url('../CLOCK.png')] bg-no-repeat bg-size-[100%_auto] m-auto">
+
+            <!-- Hour Hand -->
+            <div id="hour"
+                class="absolute bg-black rounded-xl w-[1.5%] h-[22%] bottom-1/2 left-1/2 -translate-x-1/2 origin-bottom opacity-80">
+            </div>
+
+            <!-- Minute Hand -->
+            <div id="minute"
+                class="absolute bg-black rounded-xl w-[1%] h-[30%] bottom-1/2 left-1/2 -translate-x-1/2 origin-bottom opacity-80">
+            </div>
+
+            <!-- Second Hand -->
+            <div id="second"
+                class="absolute bg-red-600 rounded-xl w-[0.5%] h-[35%] bottom-1/2 left-1/2 -translate-x-1/2 origin-bottom opacity-80">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
