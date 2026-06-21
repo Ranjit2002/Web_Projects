@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini - Chatbot</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body class="font-poppins text-[#edf3ff] bg-[#101623]">
+
+    <div class="container scrollbar-none pt-8 px-0 pb-16 flex gap-4 mt-[9.5vh] overflow-x-auto list-none">
+        <header class="app-header mx-auto my-0 px-5 py-0 max-w-245 mt-[4vh]">
+            <h1
+                class="heading text-[3em] font-bold w-fit bg-linear-to-r from-[#1d7efd] to-[#8f6fff] bg-clip-text text-transparent">
+                Hello, there</h1>
+            <h2 class="sub-heading text-[2.6em] font-bold -mt-1.25 text-[#97a7ca]">How can I help you?</h2>
+        </header>
+    </div>
+
+    <div class="suggestions scrollbar-none mx-auto my-0 px-5 py-0 max-w-245 flex gap-4 mt-[9.5vh] overflow-x-auto">
+        <div
+            class="suggestions-item w-57 p-4.5 rounded-xl bg-[#283045] shrink-0 flex flex-col transition duration-300 ease-in cursor-pointer hover:bg-[#333e58]">
+            <p class="text text-[1.1rem]">Design a home office setup for remote work under $500.</p>
+            <span
+                class="material-symbols-rounded self-end h-11.25 w-11.25 mt-8.75 flex items-center justify-center rounded-[50%] text-[#1d7efd] bg-[#101623]">
+                draw
+            </span>
+        </div>
+        <div
+            class="suggestions-item w-57 p-4.5 rounded-xl bg-[#283045] shrink-0 flex flex-col transition duration-300 ease-in cursor-pointer hover:bg-[#333e58]">
+            <p class="text text-[1.1rem]">Design a home office setup for remote work under $500.</p>
+            <span
+                class="material-symbols-rounded self-end h-11.25 w-11.25 mt-8.75 flex items-center justify-center rounded-[50%] text-[#28a745] bg-[#101623]">
+                lightbulb
+            </span>
+        </div>
+        <div
+            class="suggestions-item w-57 p-4.5 rounded-xl bg-[#283045] shrink-0 flex flex-col transition duration-300 ease-in cursor-pointer hover:bg-[#333e58]">
+            <p class="text text-[1.1rem]">Design a home office setup for remote work under $500.</p>
+            <span
+                class="material-symbols-rounded self-end h-11.25 w-11.25 mt-8.75 flex items-center justify-center rounded-[50%] text-[#ffc107] bg-[#101623]">
+                explore
+            </span>
+        </div>
+        <div
+            class="suggestions-item w-57 p-4.5 rounded-xl bg-[#283045] shrink-0 flex flex-col transition duration-300 ease-in cursor-pointer hover:bg-[#333e58]">
+            <p class="text text-[1.1rem]">Design a home office setup for remote work under $500.</p>
+            <span
+                class="material-symbols-rounded self-end h-11.25 w-11.25 mt-8.75 flex items-center justify-center rounded-[50%] text-[#6f42c1] bg-[#101623]">
+                code_blocks
+            </span>
+        </div>
+    </div>
+
+    <div
+        class="suggestions-item w-57 p-4.5 rounded-xl bg-[#283045] shrink-0 flex flex-col transition duration-300 ease-in cursor-pointer hover:bg-[#333e58] mx-auto mt-15">
+        <p class="text text-[1.1rem]">Design a home office setup for remote work under $500.</p>
+        <div class="self-end bg-[#101623] flex justify-end items-center rounded-full">
+            <span
+                class="material-symbols-rounded h-11.5 w-11.25 mt-8.75 flex items-center justify-center rounded-[50%] text-[#6f42c1]">
+                code_blocks
+            </span>
+        </div>
+    </div>
+
+
+
+    <div class="prompt-container mx-auto my-0 px-5 py-0 max-w-245">
+        <div class="prompt-wrapper">
+            <form action="#" class="prompt-form">
+                <input type="text" placeholder="Ask Gemini" class="prompt-input" required>
+                <div class="prompt-actions">
+                    <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
+                    <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+
+            <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+            <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+        </div>
+
+        <p class="disclaimer-text mx-auto my-0 px-5 py-0 max-w-245">Gemini is AI and can make mistakes.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

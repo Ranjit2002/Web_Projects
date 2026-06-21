@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Blocks</title>
+    <style>
+        /* General page layout */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding-top: 40px;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* The Game Board */
+        #game-board {
+            width: 500px;
+            height: 500px;
+            border: 2px solid #2c3e50;
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* The Player Blocks */
+        .player-block {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            /* Allows positioning via top/left coordinates */
+            border-radius: 6px;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+            /* Gives blocks a slight border */
+
+            /* The transition smooths out the movement between server updates */
+            transition: left 0.05s linear, top 0.05s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Multiplayer Blocks</h2>
+    <p>Use <strong>Arrow Keys</strong> to move your block.</p>
+
+    <!-- The container where JavaScript will inject the player blocks -->
+    <div id="game-board"></div>
+
+    <!-- Socket.io client script (served automatically by your Node server) -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Your custom client logic -->
+    <script src="script.js"></script>
+</body>
+
+</html>
