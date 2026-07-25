@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | RAJESH FURNITURE WORKS</title><!-- Google Fonts: Inter & Libre Franklin -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Libre+Franklin:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Local Compiled CSS (Keep this if you are compiling locally) -->
+    <link href="./src/output.css" rel="stylesheet">
+
+    <!-- Tailwind CSS v4 Browser Build (Replaces old CDN) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind v4 Configuration -->
+    <style type="text/tailwindcss">
+        @theme {
+            /* Overrides the default sans font in v4 */
+            --font-sans: "Inter", "Libre Franklin", sans-serif;
+        }
+    </style>
+
+    <!-- Global Light Mode Overrides (SMART FIX) -->
+    <style>
+        /* 1. Global Light Background */
+        body.light-mode {
+            background-color: #f8fafc !important;
+            /* Slate 50 */
+            color: #0f172a !important;
+            /* Slate 900 */
+        }
+
+        /* 2. Invert Content Backgrounds (Protects Hero/Headers) */
+        body.light-mode main .bg-gray-950,
+        body.light-mode main .bg-gray-900,
+        body.light-mode main .bg-gray-800,
+        body.light-mode section .bg-gray-950,
+        body.light-mode section .bg-gray-900,
+        body.light-mode section .bg-gray-800,
+        body.light-mode footer .bg-gray-950 {
+            background-color: #ffffff !important;
+            border-color: #cbd5e1 !important;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 3. Handle Translucent Backgrounds/Cards */
+        body.light-mode .bg-gray-900\/50,
+        body.light-mode .bg-gray-950\/70,
+        body.light-mode .bg-gray-950\/60,
+        body.light-mode .bg-gray-800\/50,
+        body.light-mode .bg-gray-900\/40 {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+            border-color: #cbd5e1 !important;
+        }
+
+        /* 4. Invert Text Colors (Only inside Main, Section, and Footer to protect Headers) */
+        body.light-mode main .text-white,
+        body.light-mode section .text-white,
+        body.light-mode footer .text-white {
+            color: #0f172a !important;
+        }
+
+        body.light-mode main .text-gray-100,
+        body.light-mode section .text-gray-100,
+        body.light-mode footer .text-gray-100,
+        body.light-mode main .text-gray-200,
+        body.light-mode section .text-gray-200,
+        body.light-mode footer .text-gray-200,
+        body.light-mode main .text-gray-300,
+        body.light-mode section .text-gray-300,
+        body.light-mode footer .text-gray-300,
+        body.light-mode main .text-gray-400,
+        body.light-mode section .text-gray-400,
+        body.light-mode footer .text-gray-400 {
+            color: #334155 !important;
+        }
+
+        /* 5. PROTECT IMAGE OVERLAYS & GRADIENTS */
+        /* Keeps text white when it's positioned absolutely over an image */
+        body.light-mode main .absolute .text-white,
+        body.light-mode section .absolute .text-white,
+        body.light-mode .slide .text-white {
+            color: #ffffff !important;
+        }
+
+        body.light-mode main .absolute .text-gray-400,
+        body.light-mode section .absolute .text-gray-400,
+        body.light-mode .slide .text-gray-400 {
+            color: #d1d5db !important;
+        }
+
+        /* Fixes the "Blurry" Text Bug by protecting transparent gradient text */
+        body.light-mode .text-transparent {
+            color: transparent !important;
+        }
+
+        /* 6. Navbar & UI Fixes */
+        body.light-mode .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-bottom-color: rgba(52, 211, 153, 0.5) !important;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        body.light-mode .navbar-scrolled .text-white {
+            color: #0f172a !important;
+        }
+
+        body.light-mode .navbar-scrolled .text-gray-400 {
+            color: #334155 !important;
+        }
+
+        /* Button styling for Light Mode */
+        body.light-mode button.theme-toggle {
+            color: #0f172a !important;
+            background-color: rgba(0, 0, 0, 0.05) !important;
+            border-color: #cbd5e1 !important;
+        }
+
+        /* 7. Contact Form Fixes */
+        body.light-mode input,
+        body.light-mode textarea,
+        body.light-mode select {
+            background-color: #f1f5f9 !important;
+            /* Light gray input */
+            color: #0f172a !important;
+            /* Dark text */
+            border-color: #cbd5e1 !important;
+        }
+
+        body.light-mode input::placeholder,
+        body.light-mode textarea::placeholder {
+            color: #94a3b8 !important;
+        }
+    </style>
+    <!-- Global Light Mode Overrides -->
+    <style>
+        body.light-mode {
+            background-color: #f8fafc !important;
+            /* Slate 50 */
+            color: #0f172a !important;
+            /* Slate 900 */
+        }
+
+        body.light-mode .bg-gray-950,
+        body.light-mode .bg-gray-900,
+        body.light-mode .bg-gray-800 {
+            background-color: #ffffff !important;
+        }
+
+        body.light-mode .bg-gray-900\/50,
+        body.light-mode .bg-gray-950\/70,
+        body.light-mode .bg-gray-950\/60,
+        body.light-mode .bg-gray-800\/50 {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        body.light-mode .text-white {
+            color: #0f172a !important;
+        }
+
+        body.light-mode .text-gray-100,
+        body.light-mode .text-gray-200,
+        body.light-mode .text-gray-300,
+        body.light-mode .text-gray-400 {
+            color: #334155 !important;
+            /* Slate 700 */
+        }
+
+        body.light-mode .border-gray-700,
+        body.light-mode .border-gray-800,
+        body.light-mode .border-white\/10,
+        body.light-mode .border-white\/5 {
+            border-color: #cbd5e1 !important;
+            /* Slate 300 */
+        }
+
+        /* Navbar specifically for Light Mode */
+        body.light-mode .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-bottom-color: rgba(52, 211, 153, 0.5) !important;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Style the desktop toggle icon to stay visible in light mode */
+        body.light-mode button.theme-toggle.bg-white\/5 {
+            color: #0f172a !important;
+            border-color: #cbd5e1 !important;
+            background-color: #f1f5f9 !important;
+        }
+
+        /* Custom Keyframes for ambient movement */
+        @keyframes slow-pan {
+            0% {
+                transform: scale(1.05) translate(0, 0);
+            }
+
+            50% {
+                transform: scale(1.1) translate(-1%, 1%);
+            }
+
+            100% {
+                transform: scale(1.05) translate(0, 0);
+            }
+        }
+
+        .animate-pan {
+            animation: slow-pan 20s ease-in-out infinite;
+        }
+
+        @keyframes float-element {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float-delay {
+            animation: float-element 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        /* Custom utility for gradient borders */
+        .gradient-border-card {
+            position: relative;
+            background: rgba(17, 24, 39, 0.8);
+            background-clip: padding-box;
+            border: 1px solid transparent;
+        }
+
+        .gradient-border-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            margin: -1px;
+            border-radius: inherit;
+            background: linear-gradient(to bottom right, rgba(52, 211, 153, 0.5), rgba(6, 182, 212, 0.1), rgba(17, 24, 39, 1));
+            transition: opacity 0.5s ease;
+            opacity: 0.3;
+        }
+
+        .gradient-border-card:hover::before {
+            opacity: 1;
+            background: linear-gradient(to bottom right, rgba(52, 211, 153, 0.8), rgba(6, 182, 212, 0.5), rgba(168, 85, 247, 0.3));
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100 overflow-x-hidden antialiased font-sans selection:bg-cyan-500/30">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar"
+        class="fixed w-full z-50 top-0 left-0 bg-gray-950/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-all duration-500 py-2">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center transition-all duration-300">
+
+            <a href="index.html"
+                class="group relative z-20 flex items-center gap-2 text-2xl md:text-3xl font-black tracking-tight transition-all duration-300">
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 group-hover:drop-shadow-[0_0_15px_rgba(52,211,153,0.8)] transition-all duration-500">
+                    RAJESH FURNITURE WORKS
+                </span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 lg:space-x-10 items-center">
+                <!-- INACTIVE -->
+                <a href="index.html"
+                    class="relative group text-sm font-semibold tracking-widest text-gray-400 hover:text-white transition-colors duration-300">
+                    HOME
+                    <span
+                        class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300 ease-out rounded-full group-hover:shadow-[0_0_12px_rgba(52,211,153,0.6)]"></span>
+                </a>
+
+                <!-- ACTIVE LINK -->
+                <a href="about.html"
+                    class="relative group text-sm font-bold tracking-widest text-white transition-colors duration-300">
+                    ABOUT
+                    <span
+                        class="absolute -bottom-2 left-0 w-full h-[2px] bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-[0_0_12px_rgba(52,211,153,0.8)] rounded-full"></span>
+                </a>
+
+                <!-- INACTIVE -->
+                <a href="collections.html"
+                    class="relative group text-sm font-semibold tracking-widest text-gray-400 hover:text-white transition-colors duration-300">
+                    COLLECTIONS
+                    <span
+                        class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300 ease-out rounded-full group-hover:shadow-[0_0_12px_rgba(52,211,153,0.6)]"></span>
+                </a>
+                <a href="contact.html"
+                    class="relative group text-sm font-semibold tracking-widest text-gray-400 hover:text-white transition-colors duration-300">
+                    CONTACT
+                    <span
+                        class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300 ease-out rounded-full group-hover:shadow-[0_0_12px_rgba(52,211,153,0.6)]"></span>
+                </a>
+
+                <!-- THEME TOGGLE (DESKTOP) -->
+                <button
+                    class="theme-toggle ml-4 p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-emerald-400/50 hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer">
+                    <svg class="theme-toggle-dark-icon w-5 h-5 hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                    <svg class="theme-toggle-light-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn"
+                class="md:hidden relative z-20 text-gray-300 hover:text-white focus:outline-none p-2 transition-transform duration-300 hover:scale-110 cursor-pointer">
+                <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu"
+            class="md:hidden absolute top-full left-0 w-full bg-gray-950/95 backdrop-blur-3xl border-b border-emerald-500/30 shadow-2xl flex flex-col items-center py-8 space-y-6">
+            <a href="index.html"
+                class="text-gray-400 hover:text-white font-semibold tracking-widest text-lg transition-colors duration-300 w-full text-center">HOME</a>
+            <a href="about.html"
+                class="text-emerald-400 font-black tracking-widest text-xl w-full text-center drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]">ABOUT</a>
+            <a href="collections.html"
+                class="text-gray-400 hover:text-white font-semibold tracking-widest text-lg transition-colors duration-300 w-full text-center">COLLECTIONS</a>
+            <a href="contact.html"
+                class="text-gray-400 hover:text-white font-semibold tracking-widest text-lg transition-colors duration-300 w-full text-center mb-4">CONTACT</a>
+
+            <!-- NEW THEME TOGGLE (MOBILE) -->
+            <button
+                class="theme-toggle px-8 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-950 text-sm font-black tracking-wider shadow-[0_0_15px_rgba(52,211,153,0.4)] flex items-center justify-center gap-2 cursor-pointer w-[60%]">
+                <svg class="theme-toggle-dark-icon w-5 h-5 hidden" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
+                </svg>
+                <svg class="theme-toggle-light-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                    </path>
+                </svg>
+                <span>SWITCH THEME</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH PARALLAX & GRADIENT OVERLAY -->
+    <header class="relative h-[70vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center text-center">
+        <!-- Background Image with Pan Animation -->
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1618220179428-22790b46a0eb?auto=format&fit=crop&q=80&w=2000"
+                alt="Workshop" class="w-full h-full object-cover animate-pan origin-center">
+        </div>
+
+        <!-- Multi-layered Linear Gradient Overlays -->
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-900/60 to-gray-950 z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-emerald-900/30 to-cyan-900/30 z-0 mix-blend-overlay"></div>
+
+        <div class="relative z-10 px-6 max-w-4xl mx-auto mt-20">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-emerald-400 text-sm font-bold tracking-widest uppercase mb-6 shadow-[0_0_20px_rgba(52,211,153,0.2)]">
+                Our Heritage
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-white drop-shadow-2xl leading-tight">
+                Crafting Legacies in <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">Wood.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
+                For over two decades, we have blended traditional artisanship with modern precision to redefine the
+                spaces where life happens.
+            </p>
+        </div>
+    </header>
+
+    <!-- OUR STORY SECTION (Transforms & Hover Effects) -->
+    <section class="py-24 max-w-7xl mx-auto px-6 relative">
+        <!-- Ambient Background Glow -->
+        <div
+            class="absolute top-1/2 left-0 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2">
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+
+            <!-- Left Text Content -->
+            <div class="w-full lg:w-1/2 relative z-10">
+                <h2 class="text-sm font-bold tracking-widest text-cyan-400 mb-2 uppercase">The Journey</h2>
+                <h3 class="text-4xl md:text-5xl font-black tracking-tight mb-8 text-white">From a small workshop to a
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">design
+                        powerhouse.</span>
+                </h3>
+
+                <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+                    <p class="group hover:text-gray-200 transition-colors duration-300">
+                        What started in a small, dusty garage as a passion for restoring vintage chairs has evolved into
+                        RAJESH FURNITURE WORKS. We recognized early on that furniture isn't just functional; it is the
+                        silent witness to your life's best moments.
+                    </p>
+                    <p class="group hover:text-gray-200 transition-colors duration-300">
+                        Our philosophy is rooted in the belief that true luxury lies in the details. By sourcing
+                        sustainable materials and employing master craftsmen, we ensure that every cut, every joint, and
+                        every polish is executed with uncompromising perfection.
+                    </p>
+                </div>
+
+                <!-- Stats with hover transforms -->
+                <div class="grid grid-cols-2 gap-6 mt-12">
+                    <div
+                        class="group p-6 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(52,211,153,0.3)]">
+                        <h4
+                            class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500 mb-2 group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all">
+                            20+</h4>
+                        <p class="text-sm text-gray-500 tracking-wider font-semibold uppercase">Years of Mastery</p>
+                    </div>
+                    <div
+                        class="group p-6 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.3)]">
+                        <h4
+                            class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500 mb-2 group-hover:from-cyan-400 group-hover:to-blue-500 transition-all">
+                            10k</h4>
+                        <p class="text-sm text-gray-500 tracking-wider font-semibold uppercase">Pieces Delivered</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image Grid with Transforms -->
+            <div class="w-full lg:w-1/2 relative h-[600px]">
+                <!-- Back image -->
+                <div
+                    class="absolute top-0 right-0 w-4/5 h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-gray-700/50 transition-transform duration-700 hover:scale-[1.03] hover:-rotate-1 z-10 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent mix-blend-overlay z-10">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1000"
+                        alt="Design Sketching" class="w-full h-full object-cover">
+                </div>
+                <!-- Front overlapping image (Floats) -->
+                <div
+                    class="absolute bottom-0 left-0 w-3/5 h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-2 border-gray-950 animate-float-delay z-20 transition-transform duration-700 hover:scale-105 hover:rotate-3 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-bl from-emerald-500/20 to-transparent mix-blend-overlay z-10">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=800"
+                        alt="Woodworking" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CORE VALUES SECTION -->
+    <section
+        class="py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 border-t border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-16 relative z-10">
+                <h2 class="text-4xl font-black tracking-wider mb-4 text-white">OUR CORE VALUES</h2>
+                <div
+                    class="w-24 h-1.5 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 mx-auto rounded-full shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+
+                <!-- Value 1 -->
+                <div
+                    class="gradient-border-card rounded-3xl p-8 backdrop-blur-xl group hover:-translate-y-4 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400/20 to-emerald-900/40 border border-emerald-500/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 group-hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] text-emerald-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-cyan-400 transition-colors">
+                        Sustainability First</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">We source our
+                        timber exclusively from certified sustainable forests and utilize non-toxic, eco-friendly
+                        finishes to protect both your home and our planet.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div
+                    class="gradient-border-card rounded-3xl p-8 backdrop-blur-xl group hover:-translate-y-4 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400/20 to-cyan-900/40 border border-cyan-500/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500 group-hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] text-cyan-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-400 transition-colors">
+                        Uncompromised Quality</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">We do not
+                        believe in mass production. Every joint is inspected, every fabric is tested, ensuring that the
+                        furniture you buy today becomes a family heirloom tomorrow.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div
+                    class="gradient-border-card rounded-3xl p-8 backdrop-blur-xl group hover:-translate-y-4 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400/20 to-purple-900/40 border border-purple-500/30 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 group-hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] text-purple-400">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-colors">
+                        Form Meets Function</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">Design
+                        shouldn't just look stunning; it should solve problems. We meticulously engineer every piece to
+                        support the natural flow of your lifestyle and body.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="py-24 relative overflow-hidden flex items-center justify-center text-center px-6">
+        <div class="absolute inset-0 w-full h-full">
+            <div class="absolute inset-0 bg-gray-950 z-10 opacity-90"></div>
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-emerald-500/20 via-cyan-500/20 to-transparent rounded-full blur-[100px] z-0 pointer-events-none">
+            </div>
+        </div>
+
+        <div class="relative z-20 max-w-3xl mx-auto group">
+            <h2
+                class="text-4xl md:text-6xl font-black mb-8 text-white transition-transform duration-500 group-hover:scale-105">
+                Ready to transform your space?
+            </h2>
+            <p class="text-xl text-gray-400 mb-10">Explore our latest collections or reach out for custom projects.</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="collections.html"
+                    class="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-950 font-bold text-lg tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.6)] hover:-translate-y-1 w-full sm:w-auto text-center">
+                    View Collection
+                </a>
+                <a href="contact.html"
+                    class="px-8 py-4 rounded-xl bg-transparent border-2 border-gray-700 text-white font-bold text-lg tracking-wide transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:-translate-y-1 w-full sm:w-auto text-center">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Matches Index & Contact) -->
+    <footer class="pt-16 relative overflow-hidden">
+
+        <div class="border-t border-white/5 py-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-6 text-center text-gray-600 text-xs">
+                <p>&copy; 2026 RAJESH FURNITURE WORKS. All rights reserved.</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
