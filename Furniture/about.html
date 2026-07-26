@@ -193,6 +193,33 @@
             background-color: #f1f5f9 !important;
         }
 
+        /* 9. FIX DARK GRADIENTS IN LIGHT MODE (Values Section) */
+
+        /* Clear the dark background gradient from the main section */
+        body.light-mode section.bg-gradient-to-b.from-gray-950 {
+            background-image: none !important;
+            background-color: #f8fafc !important;
+            /* Light slate background */
+            border-color: #e2e8f0 !important;
+        }
+
+        /* Turn the dark gradient cards into clean white cards */
+        body.light-mode .gradient-border-card {
+            background-image: none !important;
+            background-color: #ffffff !important;
+            border: 1px solid #cbd5e1 !important;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        /* Lighten the dark icon boxes inside the cards */
+        body.light-mode .to-emerald-900\/40,
+        body.light-mode .to-cyan-900\/40,
+        body.light-mode .to-purple-900\/40 {
+            background-image: none !important;
+            background-color: #f1f5f9 !important;
+            border-color: #cbd5e1 !important;
+        }
+
         /* Custom Keyframes for ambient movement */
         @keyframes slow-pan {
             0% {
@@ -255,6 +282,24 @@
             opacity: 1;
             background: linear-gradient(to bottom right, rgba(52, 211, 153, 0.8), rgba(6, 182, 212, 0.5), rgba(168, 85, 247, 0.3));
         }
+
+        /* 8. PROTECT HEADER TEXT FROM INVERTING */
+        body.light-mode header,
+        body.light-mode header .text-white {
+            color: #ffffff !important;
+        }
+
+        body.light-mode header .text-gray-200 {
+            color: #e5e7eb !important;
+        }
+
+        body.light-mode header .text-gray-300 {
+            color: #d1d5db !important;
+        }
+
+        body.light-mode header .text-gray-400 {
+            color: #9ca3af !important;
+        }
     </style>
 </head>
 
@@ -263,7 +308,7 @@
     <!-- NAVIGATION -->
     <nav id="navbar"
         class="fixed w-full z-50 top-0 left-0 bg-gray-950/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-all duration-500 py-2">
-        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center transition-all duration-300">
+        <div class="mx-auto px-6 py-2 flex justify-between items-center transition-all duration-300">
 
             <a href="index.html"
                 class="group relative z-20 flex items-center gap-2 text-2xl md:text-3xl font-black tracking-tight transition-all duration-300">
@@ -326,7 +371,8 @@
             <button id="mobile-menu-btn"
                 class="md:hidden relative z-20 text-gray-300 hover:text-white focus:outline-none p-2 transition-transform duration-300 hover:scale-110 cursor-pointer">
                 <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    <!-- Changed the path here to make all 3 lines full width -->
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
                     </path>
                 </svg>
             </button>
@@ -385,7 +431,7 @@
                 <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">Wood.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
+            <p class="text-lg md:text-xl !text-gray-300 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
                 For over two decades, we have blended traditional artisanship with modern precision to redefine the
                 spaces where life happens.
             </p>
@@ -454,7 +500,7 @@
                 </div>
                 <!-- Front overlapping image (Floats) -->
                 <div
-                    class="absolute bottom-0 left-0 w-3/5 h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-2 border-gray-950 animate-float-delay z-20 transition-transform duration-700 hover:scale-105 hover:rotate-3 cursor-pointer">
+                    class="absolute bottom-0 left-0 w-3/5 h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-2 border-gray-950 animate-float-delay z-20 transition-transform duration-700 hover:scale-105 hover:rotate-2 cursor-pointer">
                     <div
                         class="absolute inset-0 bg-gradient-to-bl from-emerald-500/20 to-transparent mix-blend-overlay z-10">
                     </div>

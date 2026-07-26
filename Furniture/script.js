@@ -50,37 +50,40 @@ document.addEventListener('DOMContentLoaded', () => {
         startInterval();
     }
 
-    // --- 2. MOBILE MENU LOGIC (FIXED) ---
+    // --- 2. MOBILE MENU LOGIC ---
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
-    const menuLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 
-    // Function to toggle menu state
-    const toggleMenu = () => {
-        mobileMenu.classList.toggle('open');
-        if (mobileMenu.classList.contains('open')) {
-            // Switch to 'X' icon
-            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>`;
-        } else {
-            // Switch back to hamburger icon
-            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>`;
-        }
-    };
+    // Ensure the menu is hidden by default when the page loads
+    if (mobileMenu) {
+        mobileMenu.classList.add('hidden');
+    }
 
     if (menuBtn && mobileMenu) {
-        // Toggle when button is clicked
+        // Toggle menu visibility on hamburger click
         menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevents click from bubbling up
-            toggleMenu();
+            e.stopPropagation(); // Prevents click from bubbling
+            
+            // Toggle the Tailwind 'hidden' class
+            mobileMenu.classList.toggle('hidden');
+            
+            // Swap the SVG Icon based on visibility
+            if (mobileMenu.classList.contains('hidden')) {
+                // Show Hamburger Icon
+                menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>`;
+            } else {
+                // Show 'X' Icon
+                menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>`;
+            }
         });
 
-        // Close menu if a link inside it is clicked
+        // Auto-close menu when any link inside it is clicked
+        const menuLinks = mobileMenu.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (mobileMenu.classList.contains('open')) {
-                    toggleMenu();
-                }
+                mobileMenu.classList.add('hidden');
+                menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>`;
             });
         });
     }
@@ -131,4 +134,62 @@ document.addEventListener('DOMContentLoaded', () => {
             setTheme(!currentlyLight);
         });
     });
+
+    // --- 5. EMAILJS CONTACT FORM LOGIC ---
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        // Initialize EmailJS 
+        emailjs.init("S2p2mt3IfnLxunPQH");
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent standard page reload
+
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+            const btnIcon = document.getElementById('btn-icon');
+
+            // Set UI to "Loading" state
+            const originalText = btnText.innerText;
+            btnText.innerText = "SENDING...";
+            btnIcon.classList.add('animate-spin'); 
+            btnIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>`; // Refresh icon
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed', 'pointer-events-none');
+            submitBtn.classList.remove('hover:-translate-y-1');
+
+            // Send via EmailJS
+            emailjs.sendForm('service_172d0i5', 'template_3y1zzwl', this)
+                .then(() => {
+                    // Success UI
+                    btnText.innerText = "MESSAGE SENT!";
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>`; // Checkmark icon
+                    
+                    // Clear the form fields
+                    contactForm.reset(); 
+
+                    // Reset button back to normal after 4 seconds
+                    setTimeout(() => {
+                        btnText.innerText = originalText;
+                        btnIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>`; // Original arrow
+                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed', 'pointer-events-none');
+                        submitBtn.classList.add('hover:-translate-y-1');
+                    }, 4000);
+
+                }, (error) => {
+                    console.log('FAILED...', error);
+                    // Error UI
+                    btnText.innerText = "ERROR! TRY AGAIN.";
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>`; // X icon
+                    
+                    setTimeout(() => {
+                        btnText.innerText = originalText;
+                        btnIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>`;
+                        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed', 'pointer-events-none');
+                        submitBtn.classList.add('hover:-translate-y-1');
+                    }, 4000);
+                });
+        });
+    }
 });

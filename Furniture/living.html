@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections Exhibition | RAJESH FURNITURE WORKS</title>
+    <title>Living Room Collection | RAJESH FURNITURE WORKS</title>
 
     <!-- Google Fonts: Inter & Libre Franklin -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +21,7 @@
 
     <!-- Tailwind v4 Configuration -->
     <style type="text/tailwindcss">
-        @theme {
-            --font-sans: "Inter", "Libre Franklin", sans-serif;
-        }
+        @theme { --font-sans: "Inter", "Libre Franklin", sans-serif; }
     </style>
 
     <!-- Global Light Mode Overrides -->
@@ -81,36 +79,6 @@
             color: #ffffff !important;
         }
 
-        /* Navbar Fixes */
-
-        /* 1. Force all navbar text & icons to be dark in light mode instantly */
-        body.light-mode nav .text-white {
-            color: #0f172a !important;
-        }
-
-        body.light-mode nav .text-gray-400 {
-            color: #334155 !important;
-        }
-
-        body.light-mode nav .text-gray-300 {
-            color: #475569 !important;
-            /* Fixes the hamburger menu icon color */
-        }
-
-        /* 2. Scrolled Navbar Background */
-        body.light-mode .navbar-scrolled {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-bottom-color: rgba(52, 211, 153, 0.5) !important;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        /* 3. Theme Toggle Button */
-        body.light-mode button.theme-toggle {
-            color: #0f172a !important;
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            border-color: #cbd5e1 !important;
-        }
-
         body.light-mode main .absolute .text-gray-400,
         body.light-mode section .absolute .text-gray-400,
         body.light-mode .slide .text-gray-400 {
@@ -121,18 +89,23 @@
             color: transparent !important;
         }
 
+        /* Navbar Fixes */
+        body.light-mode nav .text-white {
+            color: #0f172a !important;
+        }
+
+        body.light-mode nav .text-gray-400 {
+            color: #334155 !important;
+        }
+
+        body.light-mode nav .text-gray-300 {
+            color: #475569 !important;
+        }
+
         body.light-mode .navbar-scrolled {
             background-color: rgba(255, 255, 255, 0.95) !important;
             border-bottom-color: rgba(52, 211, 153, 0.5) !important;
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        body.light-mode .navbar-scrolled .text-white {
-            color: #0f172a !important;
-        }
-
-        body.light-mode .navbar-scrolled .text-gray-400 {
-            color: #334155 !important;
         }
 
         body.light-mode button.theme-toggle {
@@ -169,7 +142,6 @@
                     <span
                         class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300 ease-out rounded-full group-hover:shadow-[0_0_12px_rgba(52,211,153,0.6)]"></span>
                 </a>
-                <!-- ACTIVE LINK -->
                 <a href="collections.html"
                     class="relative group text-sm font-bold tracking-widest text-white transition-colors duration-300">COLLECTIONS
                     <span
@@ -181,7 +153,6 @@
                         class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-full transition-all duration-300 ease-out rounded-full group-hover:shadow-[0_0_12px_rgba(52,211,153,0.6)]"></span>
                 </a>
 
-                <!-- THEME TOGGLE -->
                 <button
                     class="theme-toggle ml-4 p-2.5 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-emerald-400/50 hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer">
                     <svg class="theme-toggle-dark-icon w-5 h-5 hidden" fill="none" stroke="currentColor"
@@ -198,7 +169,6 @@
                 </button>
             </div>
 
-            <!-- Mobile Menu Toggle Button -->
             <button id="mobile-menu-btn"
                 class="md:hidden relative z-20 text-gray-300 hover:text-white focus:outline-none p-2 transition-transform duration-300 hover:scale-110 cursor-pointer">
                 <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -220,7 +190,7 @@
             <a href="contact.html"
                 class="text-gray-400 hover:text-white font-semibold tracking-widest text-lg transition-colors duration-300 w-full text-center mb-4">CONTACT</a>
 
-            <!-- THEME TOGGLE (MOBILE) -->
+            <!-- THEME TOGGLE (MOBILE) FIXED -->
             <button
                 class="theme-toggle px-8 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-950 text-sm font-black tracking-wider shadow-[0_0_15px_rgba(52,211,153,0.4)] flex items-center justify-center gap-2 cursor-pointer w-[60%]">
                 <svg class="theme-toggle-dark-icon w-5 h-5 hidden" fill="none" stroke="currentColor"
@@ -239,7 +209,7 @@
         </div>
     </nav>
 
-    <!-- EXHIBITION HEADER -->
+    <!-- HEADER -->
     <header class="pt-32 pb-16 relative overflow-hidden">
         <div
             class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-emerald-600/10 to-cyan-600/10 rounded-full blur-[120px] pointer-events-none">
@@ -250,170 +220,83 @@
                 <span class="text-emerald-400 text-sm font-bold tracking-widest uppercase mb-4 block">Exhibition
                     View</span>
                 <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white drop-shadow-2xl">
-                    Visual <br>
+                    Living <br>
                     <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Gallery.</span>
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Collection.</span>
                 </h1>
             </div>
 
-            <!-- Category Filters -->
+            <!-- Category Links -->
             <div class="flex flex-wrap gap-3">
-                <a href="#"
-                    class="px-5 py-2 rounded-lg bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-500/50 text-white text-xs font-bold tracking-wider shadow-[0_0_15px_rgba(52,211,153,0.2)]">ALL
+                <a href="collections.html"
+                    class="px-5 py-2 inline-block rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-xs font-bold tracking-wider hover:border-gray-600 hover:text-white transition-all duration-300">ALL
                     PIECES</a>
+
+                <!-- ACTIVE -->
                 <a href="living.html"
-                    class="px-5 py-2 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-xs font-bold tracking-wider hover:border-gray-600 hover:text-white transition-all duration-300">LIVING</a>
+                    class="px-5 py-2 inline-block rounded-lg bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-500/50 text-white text-xs font-bold tracking-wider shadow-[0_0_15px_rgba(52,211,153,0.2)]">LIVING</a>
+
                 <a href="bedroom.html"
-                    class="px-5 py-2 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-xs font-bold tracking-wider hover:border-gray-600 hover:text-white transition-all duration-300">BEDROOM</a>
+                    class="px-5 py-2 inline-block rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-xs font-bold tracking-wider hover:border-gray-600 hover:text-white transition-all duration-300">BEDROOM</a>
             </div>
         </div>
     </header>
 
-    <!-- IMAGE GRID GALLERY -->
-    <main class="max-w-7xl mx-auto px-1 pb-24 relative z-10">
-
-        <!-- CSS Grid: 1 column on mobile, 2 on desktops. 'items-start' prevents weird stretching -->
+    <!-- IMAGE GRID GALLERY (LIVING ROOM) -->
+    <main class="max-w-7xl mx-auto px-6 pb-24 relative z-10">
+        <!-- Single Grid Container for perfect wrapping -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
 
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
                 <img src="img/hall_1.jpg" alt="Living Room" class="w-full h-auto block">
-
             </div>
 
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_2.avif" alt="Minimalist Bed" class="w-full h-auto block">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/hall_2.avif" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_1.jpeg" alt="Shelving Unit" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_4.jpeg" alt="Dining Table" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/mandir_1.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_2.jpeg" alt="Comfort Chair" class="w-full h-auto block">
-
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
-
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
                 <img src="img/hall_3.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_3.jpeg" alt="Minimalist Bed" class="w-full h-auto block">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/hall_4.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/cupboard_1.jpeg" alt="Shelving Unit" class="w-full h-auto block">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/hall_5.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_5.jpeg" alt="Dining Table" class="w-full h-auto block">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/hall_6.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_5.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_6.jpeg" alt="Comfort Chair" class="w-full h-auto block">
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
-
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
                 <img src="img/hall_7.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_8.jpeg" alt="Minimalist Bed" class="w-full h-auto block">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/hall_8.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/dining_1.jpeg" alt="Shelving Unit" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_8.jpeg" alt="Dining Table" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/cupboard_3.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_7.jpeg" alt="Comfort Chair" class="w-full h-auto block">
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
-
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
                 <img src="img/hall_10.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_12.jpeg" alt="Minimalist Bed" class="w-full h-auto block">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/hall_11.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_10.jpeg" alt="Shelving Unit" class="w-full h-auto block">
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/hall_12.jpeg" alt="Living Room" class="w-full h-auto block">
             </div>
 
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/cupboard_4.jpeg" alt="Dining Table" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_9.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_11.jpeg" alt="Comfort Chair" class="w-full h-auto block">
+            <!-- Dining & Mandir additions from original list -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <img src="img/dining_1.jpeg" alt="Dining Room" class="w-full h-auto block">
             </div>
 
         </div>
-
     </main>
 
     <!-- FOOTER -->
@@ -424,7 +307,6 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 
