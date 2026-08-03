@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collections Exhibition | RAJESH FURNITURE WORKS</title>
-
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <!-- Google Fonts: Inter & Libre Franklin -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,13 +26,15 @@
         }
     </style>
 
-    <!-- Global Light Mode Overrides -->
+    <!-- SINGLE, CLEAN LIGHT MODE CSS BLOCK -->
     <style>
+        /* 1. Global Light Background */
         body.light-mode {
             background-color: #f8fafc !important;
             color: #0f172a !important;
         }
 
+        /* 2. Invert Content Backgrounds (Specifically skips Header to protect Carousel) */
         body.light-mode main .bg-gray-950,
         body.light-mode main .bg-gray-900,
         body.light-mode main .bg-gray-800,
@@ -45,6 +47,7 @@
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
         }
 
+        /* 3. Handle Translucent Backgrounds/Cards */
         body.light-mode .bg-gray-900\/50,
         body.light-mode .bg-gray-950\/70,
         body.light-mode .bg-gray-950\/60,
@@ -54,6 +57,7 @@
             border-color: #cbd5e1 !important;
         }
 
+        /* 4. Invert Text Colors */
         body.light-mode main .text-white,
         body.light-mode section .text-white,
         body.light-mode footer .text-white {
@@ -75,15 +79,12 @@
             color: #334155 !important;
         }
 
-        body.light-mode main .absolute .text-white,
-        body.light-mode section .absolute .text-white,
-        body.light-mode .slide .text-white {
-            color: #ffffff !important;
+        /* 5. Protect Transparent Gradient Text */
+        body.light-mode .text-transparent {
+            color: transparent !important;
         }
 
-        /* Navbar Fixes */
-
-        /* 1. Force all navbar text & icons to be dark in light mode instantly */
+        /* 6. Navbar Fixes */
         body.light-mode nav .text-white {
             color: #0f172a !important;
         }
@@ -94,45 +95,12 @@
 
         body.light-mode nav .text-gray-300 {
             color: #475569 !important;
-            /* Fixes the hamburger menu icon color */
-        }
-
-        /* 2. Scrolled Navbar Background */
-        body.light-mode .navbar-scrolled {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            border-bottom-color: rgba(52, 211, 153, 0.5) !important;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        /* 3. Theme Toggle Button */
-        body.light-mode button.theme-toggle {
-            color: #0f172a !important;
-            background-color: rgba(0, 0, 0, 0.05) !important;
-            border-color: #cbd5e1 !important;
-        }
-
-        body.light-mode main .absolute .text-gray-400,
-        body.light-mode section .absolute .text-gray-400,
-        body.light-mode .slide .text-gray-400 {
-            color: #d1d5db !important;
-        }
-
-        body.light-mode .text-transparent {
-            color: transparent !important;
         }
 
         body.light-mode .navbar-scrolled {
             background-color: rgba(255, 255, 255, 0.95) !important;
             border-bottom-color: rgba(52, 211, 153, 0.5) !important;
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        body.light-mode .navbar-scrolled .text-white {
-            color: #0f172a !important;
-        }
-
-        body.light-mode .navbar-scrolled .text-gray-400 {
-            color: #334155 !important;
         }
 
         body.light-mode button.theme-toggle {
@@ -258,11 +226,11 @@
 
             <!-- Category Filters -->
             <div class="flex flex-wrap gap-3">
-                <a href="#"
+                <a href="collections.html"
                     class="px-5 py-2 rounded-lg bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-500/50 text-white text-xs font-bold tracking-wider shadow-[0_0_15px_rgba(52,211,153,0.2)]">ALL
                     PIECES</a>
                 <a href="living.html"
-                    class="px-5 py-2 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-xs font-bold tracking-wider hover:border-gray-600 hover:text-white transition-all duration-300">LIVING</a>
+                    class="px-5 py-2 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-xs font-bold tracking-wider hover:border-gray-600 hover:text-white transition-all duration-300">LIVINGROOM</a>
                 <a href="bedroom.html"
                     class="px-5 py-2 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-xs font-bold tracking-wider hover:border-gray-600 hover:text-white transition-all duration-300">BEDROOM</a>
             </div>
@@ -270,150 +238,73 @@
     </header>
 
     <!-- IMAGE GRID GALLERY -->
-    <main class="max-w-7xl mx-auto px-1 pb-24 relative z-10">
+    <!-- FIXED PADDING: Changed px-4 to px-6 md:px-12 to add the correct left/right spacing -->
+    <main class="max-w-7xl mx-auto px-2 md:px-12 pb-24 relative z-10">
 
-        <!-- CSS Grid: 1 column on mobile, 2 on desktops. 'items-start' prevents weird stretching -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
+        <!-- ONE SINGLE GRID CONTAINER: Combines all images seamlessly -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start mt-8">
 
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
-                <img src="img/hall_1.jpg" alt="Living Room" class="w-full h-auto block">
+            <!-- Batch 1 -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_1.jpg"
+                    alt="Living Room" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_2.avif"
+                    alt="Minimalist Bed" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_1.jpeg"
+                    alt="Shelving Unit" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_4.jpeg"
+                    alt="Dining Table" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/dining_1.jpeg"
+                    alt="Modern Sofa" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_2.jpeg"
+                    alt="Comfort Chair" class="w-full h-auto block"></div>
 
-            </div>
+            <!-- Batch 2 -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_3.jpeg"
+                    alt="Living Room" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_3.jpeg"
+                    alt="Minimalist Bed" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/cupboard_3.jpeg"
+                    alt="Shelving Unit" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_5.jpeg"
+                    alt="Dining Table" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_5.jpeg"
+                    alt="Modern Sofa" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_6.jpeg"
+                    alt="Comfort Chair" class="w-full h-auto block"></div>
 
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_2.avif" alt="Minimalist Bed" class="w-full h-auto block">
-            </div>
+            <!-- Batch 3 -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_7.jpeg"
+                    alt="Living Room" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_8.jpeg"
+                    alt="Minimalist Bed" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/dining_1.jpeg"
+                    alt="Shelving Unit" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_8.jpeg"
+                    alt="Dining Table" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/cupboard_3.jpeg"
+                    alt="Modern Sofa" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_7.jpeg"
+                    alt="Comfort Chair" class="w-full h-auto block"></div>
 
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_1.jpeg" alt="Shelving Unit" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_4.jpeg" alt="Dining Table" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/mandir_1.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_2.jpeg" alt="Comfort Chair" class="w-full h-auto block">
-
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
-
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
-                <img src="img/hall_3.jpeg" alt="Living Room" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_3.jpeg" alt="Minimalist Bed" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/cupboard_1.jpeg" alt="Shelving Unit" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_5.jpeg" alt="Dining Table" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_5.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_6.jpeg" alt="Comfort Chair" class="w-full h-auto block">
-            </div>
+            <!-- Batch 4 -->
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_10.jpeg"
+                    alt="Living Room" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_12.jpeg"
+                    alt="Minimalist Bed" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_10.jpeg"
+                    alt="Shelving Unit" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/mandir_3.jpeg"
+                    alt="Dining Table" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/bedroom_9.jpeg"
+                    alt="Modern Sofa" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/hall_11.jpeg"
+                    alt="Comfort Chair" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/mandir_1.jpeg"
+                    alt="Comfort Chair" class="w-full h-auto block"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-white/5"><img src="img/mandir_2.jpeg"
+                    alt="Comfort Chair" class="w-full h-auto block"></div>
 
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
-
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
-                <img src="img/hall_7.jpeg" alt="Living Room" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_8.jpeg" alt="Minimalist Bed" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/dining_1.jpeg" alt="Shelving Unit" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_8.jpeg" alt="Dining Table" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/cupboard_3.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_7.jpeg" alt="Comfort Chair" class="w-full h-auto block">
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start mt-8">
-
-            <!-- Grid Item 1 -->
-            <div class="rounded-2xl overflow-hidden">
-                <!-- Image set to h-auto block to show full uncropped width -->
-                <img src="img/hall_10.jpeg" alt="Living Room" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 2 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_12.jpeg" alt="Minimalist Bed" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 3 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_10.jpeg" alt="Shelving Unit" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 4 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/cupboard_4.jpeg" alt="Dining Table" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 5 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/bedroom_9.jpeg" alt="Modern Sofa" class="w-full h-auto block">
-            </div>
-
-            <!-- Grid Item 6 -->
-            <div class="rounded-2xl overflow-hidden">
-                <img src="img/hall_11.jpeg" alt="Comfort Chair" class="w-full h-auto block">
-            </div>
-
-        </div>
-
     </main>
 
     <!-- FOOTER -->
