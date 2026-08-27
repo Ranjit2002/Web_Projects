@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmDirect | Direct from Farmers to You</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style type="text/tailwindcss">
+        @theme {
+            /* Brand Colors using vibrant tones */
+            --color-brand-light: #ecfdf5;
+            --color-brand-green: #10b981;
+            --color-brand-dark: #047857;
+            --color-brand-accent: #0ea5e9;
+
+            /* Custom Animations */
+            --animate-float: float 6s ease-in-out infinite;
+            --animate-blob: blob 7s infinite;
+            --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Glassmorphic Navigation -->
+    <nav
+        class="bg-white/70 backdrop-blur-lg border-b border-white/20 shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fa-solid fa-leaf text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-slate-900 tracking-tight">Farm<span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Direct</span></span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden md:flex flex-1 max-w-xl mx-8">
+                    <div class="relative w-full group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full blur opacity-25 group-hover:opacity-50 transition-opacity duration-300">
+                        </div>
+                        <input type="text" placeholder="Search for fresh vegetables, fruits..."
+                            class="relative w-full pl-12 pr-4 py-3 rounded-full border-none bg-white/90 shadow-inner focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-5 top-3.5 text-slate-400 group-focus-within:text-emerald-500 transition-colors z-10"></i>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-6">
+                    <a href="#"
+                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500 hover:after:w-full after:transition-all after:duration-300">Are
+                        you a Farmer?</a>
+
+                    <button class="relative text-slate-600 hover:text-emerald-500 transition-colors group">
+                        <i class="fa-solid fa-cart-shopping text-2xl group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-white shadow-sm animate-bounce">3</span>
+                    </button>
+
+                    <button
+                        class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-7 py-2.5 rounded-full font-semibold shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-0.5 transition-all duration-300 hidden sm:block">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Hero Section -->
+    <section class="relative bg-white overflow-hidden min-h-[85vh] flex items-center">
+        <!-- Background Blob Effects -->
+        <div
+            class="absolute top-0 left-10 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob">
+        </div>
+        <div class="absolute top-0 right-20 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-8 left-40 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"
+            style="animation-delay: 4s;"></div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 w-full flex flex-col md:flex-row items-center">
+            <!-- Text Content -->
+            <div class="md:w-1/2 z-10 pr-8 animate-fade-in-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-sm font-bold tracking-wide uppercase mb-6 shadow-sm">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    Bypassing Middlemen
+                </div>
+
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Fresh from the Farm <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Straight
+                        to your Door</span>
+                </h1>
+
+                <p class="mt-6 text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    Buy 100% fresh, organic produce directly from local farmers. You pay less for premium quality, and
+                    the farmers earn exactly what they deserve.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+                        Shop Fresh <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button
+                        class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold hover:border-emerald-500 hover:text-emerald-500 hover:bg-emerald-50 shadow-sm hover:-translate-y-1 transition-all duration-300">
+                        Meet the Farmers
+                    </button>
+                </div>
+            </div>
+
+            <!-- Floating Hero Image -->
+            <div class="md:w-1/2 mt-16 md:mt-0 relative animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="relative animate-float">
+                    <!-- Decorative Ring -->
+                    <div
+                        class="absolute inset-0 border-2 border-dashed border-emerald-300 rounded-full scale-[1.15] -rotate-12">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
+                        alt="Fresh Vegetables"
+                        class="rounded-full shadow-2xl object-cover h-[500px] w-[500px] border-8 border-white relative z-10 mx-auto">
+
+                    <!-- Floating Badge -->
+                    <div
+                        class="absolute bottom-10 -left-10 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/40 z-20 flex items-center gap-4 hover:-translate-y-2 transition-transform cursor-default">
+                        <div
+                            class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-emerald-500">
+                            <i class="fa-solid fa-leaf text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Harvested Today</p>
+                            <p class="text-lg font-black text-slate-800">100% Organic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories with Hover Gradients -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-20 -mt-10">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 p-8">
+            <h2 class="text-2xl font-black text-slate-900 mb-8">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Category Item -->
+                <a href="Vegetables.html"
+                    class="group cursor-pointer rounded-2xl p-6 bg-slate-50 hover:bg-gradient-to-br hover:from-emerald-400 hover:to-teal-500 transition-transform duration-500 flex flex-col items-center gap-3 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/20">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
+                        <i
+                            class="fa-solid fa-carrot text-3xl text-emerald-500 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <span class="font-bold text-slate-700 group-hover:text-white transition-colors">Vegetables</span>
+                </a>
+                <!-- Category Item -->
+                <a href="Fruits.html"
+                    class="group cursor-pointer rounded-2xl p-6 bg-slate-50 hover:bg-gradient-to-br hover:from-orange-400 hover:to-rose-400 transition-transform duration-500 flex flex-col items-center gap-3 hover:-translate-y-2 hover:shadow-xl hover:shadow-orange-500/20">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
+                        <i
+                            class="fa-solid fa-apple-whole text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <span class="font-bold text-slate-700 group-hover:text-white transition-colors">Fruits</span>
+                </a>
+                <!-- Category Item -->
+                <a href="Grains.html"
+                    class="group cursor-pointer rounded-2xl p-6 bg-slate-50 hover:bg-gradient-to-br hover:from-amber-400 hover:to-orange-500 transition-transform duration-500 flex flex-col items-center gap-3 hover:-translate-y-2 hover:shadow-xl hover:shadow-amber-500/20">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
+                        <i
+                            class="fa-solid fa-wheat-awn text-3xl text-amber-500 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <span class="font-bold text-slate-700 group-hover:text-white transition-colors">Grains</span>
+                </a>
+                <!-- Category Item -->
+                <a href="Dairy.html"
+                    class="group cursor-pointer rounded-2xl p-6 bg-slate-50 hover:bg-gradient-to-br hover:from-blue-400 hover:to-indigo-500 transition-transform duration-500 flex flex-col items-center gap-3 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
+                        <i
+                            class="fa-solid fa-jug-detergent text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <span class="font-bold text-slate-700 group-hover:text-white transition-colors">Dairy</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-black text-slate-900">Fresh Harvest</h2>
+                    <p class="text-slate-500 mt-2 font-medium">Support local farmers by buying today's fresh picks.</p>
+                </div>
+                <a href="#"
+                    class="text-emerald-600 font-bold hover:text-emerald-700 hidden sm:flex items-center gap-2 group">
+                    View All <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Product Card 1 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group border border-slate-100 hover:border-emerald-200 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <img src="img/gajar.avif"
+                            onerror="this.src='https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=500&q=80'"
+                            alt="Organic Tomatoes"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <!-- Glassmorphic Tag -->
+                        <span
+                            class="absolute top-4 left-4 bg-white/80 backdrop-blur-md text-emerald-600 text-xs font-black tracking-wide uppercase px-3 py-1.5 rounded-full z-20 shadow-sm border border-white/50">Organic</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3
+                            class="font-bold text-xl text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                            Farm Fresh Tomatoes</h3>
+
+                        <!-- Farmer Info -->
+                        <div
+                            class="flex items-center gap-3 text-sm text-slate-600 mb-6 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div
+                                class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                                <i class="fa-solid fa-tractor text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800 leading-tight">Ramesh Patel</p>
+                                <p class="text-xs text-slate-500">Nashik, Maharashtra</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-3xl font-black text-slate-900">₹40</span>
+                                <span class="text-slate-500 text-sm font-medium">/kg</span>
+                            </div>
+                            <button
+                                class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
+                                <i class="fa-solid fa-plus text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group border border-slate-100 hover:border-emerald-200 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <img src="img/fruits.avif"
+                            onerror="this.src='https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=500&q=80'"
+                            alt="Fresh Apples"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3
+                            class="font-bold text-xl text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                            Himachal Apples</h3>
+
+                        <div
+                            class="flex items-center gap-3 text-sm text-slate-600 mb-6 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div
+                                class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                                <i class="fa-solid fa-tractor text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800 leading-tight">Singh Orchards</p>
+                                <p class="text-xs text-slate-500">Shimla, HP</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-3xl font-black text-slate-900">₹120</span>
+                                <span class="text-slate-500 text-sm font-medium">/kg</span>
+                            </div>
+                            <button
+                                class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
+                                <i class="fa-solid fa-plus text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group border border-slate-100 hover:border-emerald-200 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <img src="img/aloo.avif"
+                            onerror="this.src='https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=500&q=80'"
+                            alt="Potatoes"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span
+                            class="absolute top-4 left-4 bg-amber-400 text-slate-900 text-xs font-black tracking-wide uppercase px-3 py-1.5 rounded-full z-20 shadow-sm border border-amber-300">Bestseller</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3
+                            class="font-bold text-xl text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                            Pahadi Potatoes</h3>
+
+                        <div
+                            class="flex items-center gap-3 text-sm text-slate-600 mb-6 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div
+                                class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                                <i class="fa-solid fa-tractor text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800 leading-tight">Kisan Cooperative</p>
+                                <p class="text-xs text-slate-500">Pune, Maharashtra</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-3xl font-black text-slate-900">₹30</span>
+                                <span class="text-slate-500 text-sm font-medium">/kg</span>
+                            </div>
+                            <button
+                                class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
+                                <i class="fa-solid fa-plus text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group border border-slate-100 hover:border-emerald-200 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <img src="img/cabbage.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1587049352847-81a56d773c16?auto=format&fit=crop&w=500&q=80'"
+                            alt="Cabbage"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3
+                            class="font-bold text-xl text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                            Fresh Green Cabbage</h3>
+
+                        <div
+                            class="flex items-center gap-3 text-sm text-slate-600 mb-6 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div
+                                class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                                <i class="fa-solid fa-tractor text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800 leading-tight">Amit Farms</p>
+                                <p class="text-xs text-slate-500">Thane, Maharashtra</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-3xl font-black text-slate-900">₹25</span>
+                                <span class="text-slate-500 text-sm font-medium">/pc</span>
+                            </div>
+                            <button
+                                class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
+                                <i class="fa-solid fa-plus text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works with Glowing Connectors -->
+    <section class="bg-slate-900 py-24 relative overflow-hidden text-white mt-12">
+        <div
+            class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2
+                class="text-3xl md:text-4xl font-black mb-16 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+                How We Cut Out The Middleman</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+                <!-- Glowing Line connector -->
+                <div
+                    class="hidden md:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-emerald-900 via-emerald-400 to-emerald-900 z-0">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-3xl flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.1)] border border-emerald-500/30 mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-500 group-hover:-rotate-6">
+                        <i class="fa-solid fa-seedling text-4xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Farmers Grow</h3>
+                    <p class="text-slate-400 text-sm max-w-[200px]">Farmers harvest fresh produce directly on their
+                        local farms.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-3xl flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.1)] border border-emerald-500/30 mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-500 group-hover:rotate-6">
+                        <i class="fa-solid fa-mobile-screen text-4xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Direct Listing</h3>
+                    <p class="text-slate-400 text-sm max-w-[200px]">They set their own fair price and list it on
+                        FarmDirect.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-3xl flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.1)] border border-emerald-500/30 mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-500 group-hover:-rotate-6">
+                        <i class="fa-solid fa-basket-shopping text-4xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">You Order</h3>
+                    <p class="text-slate-400 text-sm max-w-[200px]">You browse and buy exactly what you want through the
+                        app.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative z-10 flex flex-col items-center group">
+                    <div
+                        class="w-24 h-24 bg-slate-800 rounded-3xl flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.1)] border border-emerald-500/30 mb-6 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-500 group-hover:rotate-6">
+                        <i class="fa-solid fa-truck-fast text-4xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Fast Delivery</h3>
+                    <p class="text-slate-400 text-sm max-w-[200px]">Produce reaches you in 24 hours, fresh from the
+                        source.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-300 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="pr-8">
+                <div class="flex items-center gap-2 mb-6 cursor-pointer">
+                    <div
+                        class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-leaf text-sm"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-white">Farm<span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Direct</span></span>
+                </div>
+                <p class="text-sm text-slate-400 leading-relaxed">Empowering farmers and providing customers with the
+                    freshest produce directly from the source. No middlemen, no compromise.</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-lg">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#"
+                            class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
+                                class="fa-solid fa-angle-right text-xs"></i> Shop All</a></li>
+                    <li><a href="#"
+                            class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
+                                class="fa-solid fa-angle-right text-xs"></i> Our Farmers</a></li>
+                    <li><a href="#"
+                            class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
+                                class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-lg">For Farmers</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#"
+                            class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
+                                class="fa-solid fa-angle-right text-xs"></i> Sell with Us</a></li>
+                    <li><a href="#"
+                            class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
+                                class="fa-solid fa-angle-right text-xs"></i> Farmer Dashboard</a></li>
+                    <li><a href="#"
+                            class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
+                                class="fa-solid fa-angle-right text-xs"></i> Pricing Policies</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-lg">Contact</h4>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-emerald-400">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div> support@farmdirect.com
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-emerald-400">
+                            <i class="fa-solid fa-phone"></i>
+                        </div> +91 98765 43210
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <p>&copy; 2026 FarmDirect. All rights reserved.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#"
+                    class="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition-all duration-300"><i
+                        class="fa-brands fa-twitter"></i></a>
+                <a href="#"
+                    class="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition-all duration-300"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"
+                    class="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition-all duration-300"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
