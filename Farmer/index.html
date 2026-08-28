@@ -75,14 +75,19 @@
 
                 <!-- Actions -->
                 <div class="flex items-center gap-6">
-                    <a href="#"
-                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500 hover:after:w-full after:transition-all after:duration-300">Are
-                        you a Farmer?</a>
+                    <a href="About.html"
+                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500 hover:after:w-full after:transition-all after:duration-300">About</a>
+                    <a href="Contact.html"
+                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500 hover:after:w-full after:transition-all after:duration-300">Contact</a>
+                    <a href="sell.html"
+                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-500 hover:after:w-full after:transition-all after:duration-300">Sell
+                        on FarmDirect</a>
 
                     <button class="relative text-slate-600 hover:text-emerald-500 transition-colors group">
-                        <i class="fa-solid fa-cart-shopping text-2xl group-hover:scale-110 transition-transform"></i>
+                        <a href="Cart.html"><i
+                                class="fa-solid fa-cart-shopping text-2xl group-hover:scale-110 transition-transform"></i></a>
                         <span
-                            class="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-white shadow-sm animate-bounce">3</span>
+                            class="cart-badge absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-white shadow-sm">0</span>
                     </button>
 
                     <button
@@ -247,7 +252,6 @@
                             onerror="this.src='https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=500&q=80'"
                             alt="Organic Tomatoes"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        <!-- Glassmorphic Tag -->
                         <span
                             class="absolute top-4 left-4 bg-white/80 backdrop-blur-md text-emerald-600 text-xs font-black tracking-wide uppercase px-3 py-1.5 rounded-full z-20 shadow-sm border border-white/50">Organic</span>
                     </div>
@@ -274,7 +278,7 @@
                                 <span class="text-3xl font-black text-slate-900">₹40</span>
                                 <span class="text-slate-500 text-sm font-medium">/kg</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Farm Fresh Tomatoes', 40, 'img/gajar.avif')"
                                 class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </button>
@@ -316,7 +320,7 @@
                                 <span class="text-3xl font-black text-slate-900">₹120</span>
                                 <span class="text-slate-500 text-sm font-medium">/kg</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Himachal Apples', 120, 'img/fruits.avif')"
                                 class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </button>
@@ -360,7 +364,7 @@
                                 <span class="text-3xl font-black text-slate-900">₹30</span>
                                 <span class="text-slate-500 text-sm font-medium">/kg</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Pahadi Potatoes', 30, 'img/aloo.avif')"
                                 class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </button>
@@ -402,7 +406,7 @@
                                 <span class="text-3xl font-black text-slate-900">₹25</span>
                                 <span class="text-slate-500 text-sm font-medium">/pc</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Fresh Green Cabbage', 25, 'img/cabbage.jpg')"
                                 class="bg-slate-100 text-slate-600 hover:bg-emerald-500 hover:text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30 hover:-rotate-90">
                                 <i class="fa-solid fa-plus text-lg"></i>
                             </button>
@@ -500,7 +504,7 @@
                     <li><a href="#"
                             class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
                                 class="fa-solid fa-angle-right text-xs"></i> Our Farmers</a></li>
-                    <li><a href="#"
+                    <li><a href="About.html"
                             class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
                                 class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
                 </ul>
@@ -509,7 +513,7 @@
             <div>
                 <h4 class="text-white font-bold mb-6 text-lg">For Farmers</h4>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="#"
+                    <li><a href="sell.html"
                             class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2 hover:translate-x-1 duration-300"><i
                                 class="fa-solid fa-angle-right text-xs"></i> Sell with Us</a></li>
                     <li><a href="#"
@@ -557,6 +561,8 @@
         </div>
     </footer>
 
+    <!-- ADD THIS SCRIPT TAG FOR THE CART TO WORK -->
+    <script src="script.js"></script>
 </body>
 
 </html>

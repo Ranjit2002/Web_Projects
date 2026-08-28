@@ -7,6 +7,8 @@
     <title>FarmDirect | Fruits</title>
     <link href="./src/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -18,8 +20,7 @@
             <div class="max-w-7xl mx-auto relative z-10 text-center">
                 <h1 class="text-4xl md:text-5xl font-black text-white mb-4">Seasonal Fruits</h1>
                 <p class="text-orange-100 text-lg font-medium max-w-2xl mx-auto">Sweet, juicy, and naturally ripened
-                    under
-                    the sun.</p>
+                    under the sun.</p>
             </div>
         </header>
 
@@ -44,7 +45,7 @@
                                 <span class="text-3xl font-black text-stone-900">₹140</span>
                                 <span class="text-stone-500 font-semibold">/kg</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Kinnaur Apples', 140, 'img/apple.jpg')"
                                 class="w-full bg-gradient-to-r from-orange-500 to-rose-600 hover:from-orange-600 hover:to-rose-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-transform active:scale-95">
                                 <i class="fa-solid fa-basket-shopping"></i> Add to Basket
                             </button>
@@ -70,7 +71,7 @@
                                 <span class="text-3xl font-black text-stone-900">₹50</span>
                                 <span class="text-stone-500 font-semibold">/dozen</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Robusta Bananas', 50, 'img/banana.jpg')"
                                 class="w-full bg-gradient-to-r from-orange-500 to-rose-600 hover:from-orange-600 hover:to-rose-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-transform active:scale-95">
                                 <i class="fa-solid fa-basket-shopping"></i> Add to Basket
                             </button>
@@ -78,10 +79,11 @@
                     </div>
                 </div>
 
+                <!-- Fruit Card 3 -->
                 <div
                     class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-stone-100 flex flex-col group">
                     <div class="relative h-64 overflow-hidden bg-stone-200">
-                        <img src="img/mango.jpg" alt="Bananas"
+                        <img src="img/mango.jpg" alt="Mangoes"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-rose-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -95,7 +97,7 @@
                                 <span class="text-3xl font-black text-stone-900">₹200</span>
                                 <span class="text-stone-500 font-semibold">/kg</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Mangoes', 200, 'img/mango.jpg')"
                                 class="w-full bg-gradient-to-r from-orange-500 to-rose-600 hover:from-orange-600 hover:to-rose-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-transform active:scale-95">
                                 <i class="fa-solid fa-basket-shopping"></i> Add to Basket
                             </button>
@@ -103,10 +105,11 @@
                     </div>
                 </div>
 
+                <!-- Fruit Card 4 -->
                 <div
                     class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-stone-100 flex flex-col group">
                     <div class="relative h-64 overflow-hidden bg-stone-200">
-                        <img src="img/grapes.jpg" alt="Bananas"
+                        <img src="img/grapes.jpg" alt="Grapes"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-rose-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -120,7 +123,7 @@
                                 <span class="text-3xl font-black text-stone-900">₹150</span>
                                 <span class="text-stone-500 font-semibold">/kg</span>
                             </div>
-                            <button
+                            <button onclick="addToCart('Grapes', 150, 'img/grapes.jpg')"
                                 class="w-full bg-gradient-to-r from-orange-500 to-rose-600 hover:from-orange-600 hover:to-rose-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-transform active:scale-95">
                                 <i class="fa-solid fa-basket-shopping"></i> Add to Basket
                             </button>
@@ -131,6 +134,9 @@
             </div>
         </section>
     </main>
+
+    <!-- ADD THIS SCRIPT TAG FOR THE CART TO WORK -->
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmDirect | Your Basket</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- QR Code Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-brand-light: #ecfdf5;
+            --color-brand-green: #10b981;
+            --color-brand-dark: #047857;
+            --color-brand-accent: #0ea5e9;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden relative">
+
+    <!-- Glassmorphic Navigation -->
+    <nav
+        class="bg-white/70 backdrop-blur-lg border-b border-white/20 shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fa-solid fa-leaf text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-slate-900 tracking-tight">Farm<span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Direct</span></span>
+                </a>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-6">
+                    <a href="index.html"
+                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors">Home</a>
+                    <a href="About.html"
+                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors">About</a>
+                    <a href="sell.html"
+                        class="text-slate-600 hover:text-emerald-500 font-medium hidden md:block transition-colors">Sell
+                        on FarmDirect</a>
+
+                    <a href="Cart.html" class="relative text-emerald-500 transition-colors group">
+                        <i class="fa-solid fa-cart-shopping text-2xl group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="cart-badge absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-white shadow-sm">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Cart Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-[70vh]">
+        <h1 class="text-4xl font-black text-slate-900 mb-8">Your Basket</h1>
+
+        <div class="flex flex-col lg:flex-row gap-10">
+            <!-- Left Side: Cart Items List -->
+            <div class="lg:w-2/3">
+                <div id="cart-container" class="space-y-6">
+                    <!-- Items will be injected here via JavaScript -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state"
+                    class="hidden text-center py-20 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                    <div
+                        class="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center text-slate-300 text-4xl mx-auto mb-6">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Your basket is empty</h2>
+                    <p class="text-slate-500 mb-8">Looks like you haven't added any fresh produce yet.</p>
+                    <a href="index.html"
+                        class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8 py-4 rounded-full font-bold shadow-lg transition-all duration-300">
+                        Start Shopping
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Order Summary -->
+            <div class="lg:w-1/3">
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-xl sticky top-28">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Order Summary</h2>
+
+                    <div class="space-y-4 text-slate-600 mb-6 border-b border-slate-100 pb-6">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span class="font-bold text-slate-900">₹<span id="summary-subtotal">0</span></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Delivery Partner Fee</span>
+                            <span class="font-bold text-slate-900">₹<span id="summary-delivery">40</span></span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-lg font-bold text-slate-900">Total to Pay</span>
+                        <span class="text-3xl font-black text-emerald-600">₹<span id="summary-total">0</span></span>
+                    </div>
+
+                    <button id="checkout-btn"
+                        class="w-full bg-emerald-400 hover:bg-emerald-500 text-white font-bold text-lg py-5 rounded-2xl shadow-lg hover:shadow-emerald-500/40 active:scale-[0.98] transition-all duration-300 flex justify-center items-center gap-3">
+                        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECURE UPI PAYMENT MODAL (Hidden by default) -->
+    <div id="payment-modal"
+        class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm transition-opacity">
+        <div
+            class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl max-w-sm w-full mx-4 text-center relative border border-slate-100">
+            <!-- Close Button -->
+            <button id="close-modal"
+                class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <h3 class="text-2xl font-black text-slate-900 mb-2">Secure Checkout</h3>
+            <p class="text-slate-500 mb-6 text-sm">Scan with Google Pay, PhonePe, or Paytm to pay <br><span
+                    class="font-black text-slate-800 text-2xl mt-1 block">₹<span id="modal-total">0</span></span></p>
+
+            <!-- Dynamic QR Code Container -->
+            <div id="qrcode-container"
+                class="bg-slate-50 p-6 rounded-3xl border border-slate-200 mb-8 flex justify-center items-center shadow-inner min-h-[220px]">
+                <!-- QRCode.js will inject the canvas/img here -->
+            </div>
+
+            <!-- Confirm Payment Button -->
+            <button id="confirm-payment-btn"
+                class="w-full bg-slate-900 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-emerald-500/40 active:scale-95 transition-all duration-300 flex justify-center items-center gap-2">
+                <i class="fa-solid fa-shield-halved"></i> Payment Completed
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-300 py-12 border-t border-slate-900 text-center text-sm mt-10">
+        <p>&copy; 2026 FarmDirect. All rights reserved.</p>
+    </footer>
+
+    <!-- Global Script -->
+    <script src="script.js"></script>
+
+    <!-- Specific Cart & Checkout Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderCart();
+
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const paymentModal = document.getElementById('payment-modal');
+            const closeModal = document.getElementById('close-modal');
+            const confirmPaymentBtn = document.getElementById('confirm-payment-btn');
+            const totalEl = document.getElementById('summary-total');
+            const modalTotalEl = document.getElementById('modal-total');
+            const qrContainer = document.getElementById('qrcode-container');
+
+            // Replace this with your actual UPI ID where you want to receive money
+            const MY_UPI_ID = "surajnishad37530@oksbi";
+            const MERCHANT_NAME = "FarmDirect";
+
+            // 1. Open Payment Modal & Generate Dynamic QR
+            checkoutBtn.addEventListener('click', () => {
+                const finalAmount = totalEl.innerText;
+                modalTotalEl.innerText = finalAmount;
+
+                // Clear previous QR code to prevent duplicates
+                qrContainer.innerHTML = '';
+
+                // Construct standard UPI payment link
+                const upiURI = `upi://pay?pa=${MY_UPI_ID}&pn=${MERCHANT_NAME}&am=${finalAmount}&cu=INR`;
+
+                // Generate the actual QR code image
+                new QRCode(qrContainer, {
+                    text: upiURI,
+                    width: 170,
+                    height: 170,
+                    colorDark: "#0f172a", // Slate-900 color for brand matching
+                    colorLight: "transparent",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+
+                paymentModal.classList.remove('hidden');
+            });
+
+            // 2. Close Payment Modal
+            closeModal.addEventListener('click', () => {
+                paymentModal.classList.add('hidden');
+            });
+
+            // 3. Confirm Payment, Show Alert, Clear Cart, and Redirect
+            confirmPaymentBtn.addEventListener('click', () => {
+                alert("Order has been placed successfully! The farmer has been notified.");
+
+                // Clear the local storage cart
+                localStorage.removeItem('farmDirectCart');
+
+                // Update the global badge
+                updateCartBadge();
+
+                // Redirect to home page
+                window.location.href = "index.html";
+            });
+        });
+
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-container');
+            const emptyState = document.getElementById('empty-state');
+            const subtotalEl = document.getElementById('summary-subtotal');
+            const totalEl = document.getElementById('summary-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            let cart = JSON.parse(localStorage.getItem('farmDirectCart')) || [];
+
+            cartContainer.innerHTML = '';
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                cartContainer.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                subtotalEl.innerText = "0";
+                totalEl.innerText = "0";
+                checkoutBtn.disabled = true;
+                checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                return;
+            }
+
+            cartContainer.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+            checkoutBtn.disabled = false;
+            checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+            cart.forEach((item) => {
+                subtotal += item.price;
+                const itemHTML = `
+                    <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center gap-6 group hover:shadow-md transition-all">
+                        <div class="w-full sm:w-32 h-32 rounded-2xl overflow-hidden bg-slate-100 shrink-0">
+                            <img src="${item.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="${item.name}">
+                        </div>
+                        <div class="flex-1 text-center sm:text-left">
+                            <h3 class="text-xl font-bold text-slate-900">${item.name}</h3>
+                            <p class="text-slate-500 text-sm mt-1">Direct from Farmer</p>
+                        </div>
+                        <div class="text-2xl font-black text-slate-900">₹${item.price}</div>
+                        <button onclick="removeFromCart(${item.id})" class="w-10 h-10 rounded-full bg-slate-50 text-red-400 hover:bg-red-500 hover:text-white flex items-center justify-center transition-colors shadow-sm ml-auto sm:ml-0">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                `;
+                cartContainer.insertAdjacentHTML('beforeend', itemHTML);
+            });
+
+            subtotalEl.innerText = subtotal;
+            const deliveryFee = 40;
+            totalEl.innerText = subtotal + deliveryFee;
+        }
+
+        window.removeFromCart = function (idToRemove) {
+            let cart = JSON.parse(localStorage.getItem('farmDirectCart')) || [];
+            cart = cart.filter(item => item.id !== idToRemove);
+            localStorage.setItem('farmDirectCart', JSON.stringify(cart));
+
+            renderCart();
+            updateCartBadge();
+        }
+    </script>
+</body>
+
+</html>
